@@ -1,0 +1,1272 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Odontología Ejemplo</title>
+<meta name="description" content="Odontología Ejemplo, clínica dental en el Chicó, Bogotá. Odontología sin prisa ni dolor: citas de una hora, anestesia computarizada y presupuesto escrito antes de empezar.">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #ebebe7;
+  --surface: #dfdfd9;
+  --paper: #f6f6f3;
+  --ink: #1b2420;
+  --muted: #4b544f;
+  --accent: #1f4a40;
+  --accent-hover: #173a32;
+  --accent-ink: #f6f6f3;
+  --field: #1f4a40;
+  --field-2: #24564b;
+  --field-3: #2d6458;
+  --field-ink: #ebebe7;
+  --field-muted: #c9d3cd;
+  --marker: #cfe0d6;
+
+  --display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --text: "Geist", "Helvetica Neue", system-ui, sans-serif;
+
+  --step-small: clamp(0.875rem, 0.85rem + 0.1vw, 0.9375rem);
+  --step-body: clamp(1.0625rem, 1.02rem + 0.2vw, 1.1875rem);
+  --step-lead: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
+  --step-head: clamp(2.25rem, 1.5rem + 3vw, 4.5rem);
+  --step-display: 14.5vw;
+
+  --margin: clamp(20px, 2.4vw, 36px);
+  --r: 4px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+  --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+  --t-press: 140ms;
+  --t-hover: 180ms;
+  --t-ui: 240ms;
+  --t-reveal: 800ms;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--text);
+  font-size: var(--step-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+p { margin: 0; }
+h1, h2, h3 { margin: 0; font-weight: 400; }
+::selection { background: var(--accent); color: var(--accent-ink); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+.head {
+  font-family: var(--display);
+  font-size: var(--step-head);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+
+/* Buttons: one shape for the whole page */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 15px 22px;
+  border: 0;
+  border-radius: var(--r);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font: 600 var(--step-small)/1 var(--text);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color var(--t-hover) ease, transform var(--t-press) var(--ease-out);
+}
+.btn:hover { background: var(--accent-hover); }
+.btn:active { transform: scale(0.97); }
+.btn .arrow { display: inline-block; transition: transform var(--t-hover) var(--ease-out); }
+.btn:hover .arrow { transform: translateX(4px); }
+.btn--light { background: var(--field-ink); color: var(--field); }
+.btn--light:hover { background: #ffffff; }
+
+.link { text-decoration: underline; transition: color var(--t-hover) ease; }
+.link:hover { color: var(--accent); }
+
+/* ---------- Header ---------- */
+.bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  padding-top: 26px;
+  font-size: var(--step-small);
+}
+.brand { font-weight: 600; text-decoration: none; white-space: nowrap; }
+.bar-right { display: flex; align-items: center; gap: 24px; }
+.bar .links { display: flex; gap: 22px; white-space: nowrap; }
+.bar .links a { text-decoration: none; position: relative; }
+.bar .links a::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -4px; height: 2px;
+  background: currentColor;
+  transform: scaleX(0); transform-origin: left;
+  transition: transform var(--t-ui) var(--ease-out);
+}
+.bar .links a:hover::after { transform: scaleX(1); }
+.bar .menu-toggle { display: none; }
+
+/* ---------- Split stage ---------- */
+.split {
+  display: grid;
+  grid-template-columns: 47fr 53fr;
+  align-items: start;
+}
+.stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  padding: 20px 0 20px 20px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 12px;
+  z-index: 0;
+}
+.stage-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--r);
+  background: var(--ink);
+}
+.stage-drift { position: absolute; inset: -4% 0; will-change: transform; }
+.stage-frame img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: saturate(0.92);
+  transform: translate3d(0, 100%, 0);
+  transition: none;
+  z-index: 0;
+}
+/* the new photo slides up over the old one, which drifts upward more slowly and dims */
+.stage-frame img.is-on {
+  transform: translate3d(0, 0, 0);
+  z-index: 2;
+  transition: transform 1150ms var(--ease-in-out);
+}
+.stage-frame img.is-leaving {
+  transform: translate3d(0, -28%, 0);
+  opacity: 0.45;
+  z-index: 1;
+  transition: transform 1150ms var(--ease-in-out), opacity 1150ms var(--ease-in-out);
+}
+.stage-caption {
+  font-size: var(--step-small);
+  color: var(--muted);
+  max-width: 40ch;
+  min-height: 2.9em;
+  line-height: 1.45;
+  transition: opacity var(--t-ui) ease, transform var(--t-ui) var(--ease-out);
+}
+.stage-caption.is-swapping { opacity: 0; transform: translateY(6px); }
+
+.col {
+  padding: 0 var(--margin) 0 clamp(28px, 5vw, 76px);
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+.hero-copy {
+  padding-top: 19svh;
+  max-width: 27ch;
+}
+.hero-sentence {
+  font-size: var(--step-lead);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+.hero-meta {
+  margin-top: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 24px;
+}
+.hero-meta p { font-size: var(--step-small); color: var(--muted); max-width: 30ch; line-height: 1.4; }
+.wordmark {
+  font-family: var(--display);
+  font-size: var(--step-display);
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+  font-weight: 400;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.wordmark .ch { display: inline-block; }
+.hero .wordmark {
+  margin-top: auto;
+  padding-bottom: 56px;
+}
+
+/* Intro */
+.intro { padding: 160px 0 160px; }
+.intro-col {
+  width: min(360px, 100%);
+  display: grid;
+  gap: 1.5em;
+}
+.intro-col p:first-child { font-weight: 600; }
+
+/* Treatments as a printed menu */
+.menu-ground {
+  background: var(--surface);
+  margin-right: calc(var(--margin) * -1);
+  margin-left: calc(clamp(28px, 5vw, 76px) * -1);
+  padding: 120px clamp(28px, 5vw, 76px);
+}
+.sheet {
+  background: var(--paper);
+  max-width: 600px;
+  padding: 72px clamp(24px, 4vw, 56px) 80px;
+}
+.sheet h2 { text-align: center; margin-bottom: 44px; }
+.group + .group { margin-top: 44px; }
+.group h3 {
+  font-family: var(--text);
+  font-weight: 600;
+  font-size: var(--step-lead);
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+.row { padding: 9px 0; }
+.row-line { display: flex; align-items: baseline; gap: 10px; }
+.row-name { flex: 0 1 auto; min-width: 0; max-width: 66%; }
+.leader {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--muted);
+  letter-spacing: 0.32em;
+  min-width: 12px;
+}
+.leader::after { content: "·······························································································"; }
+.row-value { flex: none; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.row-desc { color: var(--muted); font-size: var(--step-small); max-width: 38ch; margin-top: 2px; }
+
+/* First visit: itinerary slip */
+.visit { padding: 180px 0 160px; }
+.visit-head { max-width: 30ch; }
+.visit-head p { margin-top: 22px; }
+.slip-ground { margin-top: 56px; }
+.slip {
+  background: var(--surface);
+  max-width: 480px;
+  padding: 36px 32px 64px;
+  font-variant-numeric: tabular-nums;
+}
+.slip h3 { font-family: var(--text); font-weight: 600; font-size: var(--step-body); margin: 28px 0 6px; }
+.slip h3:first-child { margin-top: 0; }
+.slip .row { padding: 6px 0; }
+.slip-total {
+  margin: 30px -32px 0;
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 32px;
+  font-weight: 600;
+}
+.slip-total span:last-child { white-space: nowrap; }
+
+/* Founder's letter */
+.letter { padding: 160px 0 180px; }
+.letter-body { max-width: 520px; display: grid; gap: 1.3em; }
+.letter mark { background: none; color: inherit; position: relative; padding: 0 0.15em; }
+.letter mark::before {
+  content: "";
+  position: absolute; inset: 0.1em 0 0;
+  background: var(--marker);
+  z-index: -1;
+  transform-origin: left;
+}
+.sign { margin-top: 18px; }
+.sign-name { font-family: var(--display); font-style: italic; font-size: var(--step-lead); line-height: 1.2; }
+.sign-role { font-size: var(--step-small); color: var(--muted); }
+.team {
+  margin: 72px 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 520px;
+  display: grid;
+  gap: 20px;
+}
+.team li { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.team strong { font-weight: 600; }
+.team span { color: var(--muted); }
+
+/* ---------- Full width sections ---------- */
+.wrap { padding: 0 var(--margin); }
+.grid12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 24px;
+}
+
+/* Live thing: the mouth map */
+.map {
+  background: var(--field);
+  color: var(--field-ink);
+  padding: 150px 0 160px;
+}
+.map-intro { grid-column: 1 / 5; }
+.map-intro p { margin-top: 22px; max-width: 34ch; }
+.map-chart { grid-column: 5 / 9; }
+.map-side { grid-column: 9 / 13; }
+.chart { max-width: 440px; margin: 0 auto; }
+.chart svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart .gum { fill: none; stroke: var(--field-2); stroke-width: 58; stroke-linecap: round; }
+.chart .zone {
+  fill: var(--field-muted);
+  font: 400 15px/1 var(--text);
+}
+.chart .zone--big { fill: var(--field-ink); font-size: 17px; font-weight: 600; }
+.tooth { cursor: pointer; outline: none; }
+.tooth rect {
+  fill: var(--field-ink);
+  fill-opacity: 0.42;
+  stroke: transparent;
+  stroke-width: 8;
+  paint-order: stroke;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: fill-opacity var(--t-hover) ease, transform var(--t-ui) var(--ease-out);
+}
+.tooth:hover rect { fill-opacity: 0.75; }
+.tooth:active rect { transform: scale(0.9); }
+.tooth:focus-visible rect { fill-opacity: 0.9; outline: none; }
+.tooth[aria-pressed="true"] rect { fill: #ffffff; fill-opacity: 1; animation: pick 520ms var(--ease-out); }
+@keyframes pick { 0% { transform: scale(1); } 40% { transform: scale(1.28); } 100% { transform: scale(1); } }
+.chart-note { margin-top: 18px; text-align: center; font-size: var(--step-small); color: var(--field-muted); }
+
+.symptoms { border: 0; margin: 0; padding: 0; }
+.symptoms legend { font-size: var(--step-body); font-weight: 600; margin-bottom: 14px; padding: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip input { position: absolute; opacity: 0; pointer-events: none; }
+.chip span {
+  display: inline-block;
+  padding: 11px 16px;
+  border-radius: var(--r);
+  background: var(--field-2);
+  color: var(--field-ink);
+  font-size: var(--step-small);
+  cursor: pointer;
+  transition: background-color var(--t-hover) ease, color var(--t-hover) ease, transform var(--t-press) var(--ease-out);
+}
+.chip span:hover { background: var(--field-3); }
+.chip span:active { transform: scale(0.96); }
+.chip input:checked + span { background: var(--field-ink); color: var(--field); font-weight: 600; }
+.chip input:focus-visible + span { outline: 3px solid var(--field-ink); outline-offset: 2px; }
+
+.result {
+  margin-top: 32px;
+  background: var(--field-2);
+  padding: 28px;
+  border-radius: var(--r);
+  display: grid;
+  gap: 18px;
+}
+.result-tooth { color: var(--field-muted); font-size: var(--step-small); }
+.result-what { font-family: var(--display); font-size: var(--step-lead); line-height: 1.15; letter-spacing: -0.015em; }
+.result-facts { display: flex; flex-wrap: wrap; gap: 12px 40px; margin: 0; }
+.result-facts div { display: grid; }
+.result-facts dt { font-size: var(--step-small); color: var(--field-muted); }
+.result-facts dd { margin: 0; font-size: var(--step-lead); font-variant-numeric: tabular-nums; }
+.result-note { font-size: var(--step-small); color: var(--field-muted); max-width: 52ch; }
+.result.is-updating > * { animation: swap 460ms var(--ease-out) both; }
+.result.is-updating > *:nth-child(2) { animation-delay: 50ms; }
+.result.is-updating > *:nth-child(3) { animation-delay: 100ms; }
+.result.is-updating > *:nth-child(4) { animation-delay: 150ms; }
+@keyframes swap { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: none; } }
+
+/* Prices like a menu */
+.prices { padding: 180px 0 160px; }
+.prices-side { grid-column: 1 / 4; }
+.prices-side figure { margin: 40px 0 0; overflow: hidden; border-radius: var(--r); }
+.prices-side img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  filter: saturate(0.92);
+  will-change: transform;
+}
+.prices-side figcaption { margin-top: 10px; font-size: var(--step-small); color: var(--muted); }
+.prices-list { grid-column: 5 / 13; columns: 2; column-gap: 64px; }
+.pgroup { break-inside: avoid; padding-top: 48px; }
+.pgroup:first-child { padding-top: 0; }
+.pgroup h3 { font-family: var(--text); font-weight: 600; font-size: var(--step-lead); letter-spacing: -0.01em; margin-bottom: 14px; }
+.price { padding: 11px 0; }
+.price-line { display: flex; justify-content: space-between; gap: 20px; align-items: baseline; }
+.price-line b { font-weight: 400; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.price p { color: var(--muted); font-size: var(--step-small); max-width: 36ch; }
+.prices-foot { grid-column: 5 / 13; margin-top: 56px; max-width: 60ch; }
+
+/* FAQ as reading text */
+.faq { background: var(--surface); padding: 160px 0 170px; }
+.faq-head { grid-column: 1 / 4; }
+.faq-text { grid-column: 5 / 13; columns: 2; column-gap: 56px; }
+.faq-text p { break-inside: avoid; margin-bottom: 22px; }
+.faq-text b { font-weight: 600; }
+
+/* Contact in display rows */
+.contact { overflow: hidden; }
+.crow {
+  display: flex;
+  align-items: flex-end;
+  min-height: 150px;
+  padding: 0 var(--margin) 22px;
+  font-family: var(--display);
+  font-size: var(--step-head);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.crow:nth-child(odd) { background: var(--bg); }
+.crow:nth-child(even) { background: var(--surface); }
+.crow a { text-decoration: none; transition: color var(--t-hover) ease; }
+.crow a:hover { color: var(--accent); }
+.crow a .go { display: inline-block; transition: transform var(--t-ui) var(--ease-out); }
+.crow a:hover .go { transform: translate(6px, -6px); }
+.crow--cta { background: var(--accent) !important; color: var(--accent-ink); gap: 24px; align-items: center; padding-top: 22px; }
+.crow--cta a { display: inline-flex; align-items: center; gap: 0.35em; }
+.crow--cta a:hover { color: var(--accent-ink); }
+.square-go {
+  display: inline-grid;
+  place-items: center;
+  width: 0.9em; height: 0.9em;
+  background: var(--accent-ink);
+  color: var(--accent);
+  border-radius: var(--r);
+  font-size: 0.8em;
+  transition: transform var(--t-ui) var(--ease-out);
+}
+.crow--cta a:hover .square-go { transform: translateX(8px) rotate(-8deg); }
+.crow--cta a:active .square-go { transform: scale(0.94); }
+
+/* Footer over the last photograph */
+.foot {
+  position: relative;
+  min-height: 100svh;
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #111;
+}
+.foot-photo {
+  will-change: transform;
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: 50% 55%;
+  filter: brightness(0.5) saturate(0.85);
+}
+.foot-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 32px var(--margin) 0;
+}
+.foot-top ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.foot-top a { text-decoration: none; }
+.foot-top a:hover { text-decoration: underline; }
+.foot-contact { text-align: right; }
+.foot-bottom { position: relative; margin-top: auto; padding: 0 var(--margin) 28px; }
+.foot .wordmark { color: var(--paper); font-size: 25vw; margin-left: -0.04em; padding-bottom: 40px; }
+.legal { font-size: var(--step-small); max-width: 110ch; line-height: 1.5; }
+.legal + .legal { margin-top: 10px; }
+
+/* ---------- Motion: a different entrance for each section ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  html.js .rv { opacity: 0; transition: opacity var(--t-reveal) var(--ease-out), transform var(--t-reveal) var(--ease-out); transition-delay: calc(var(--i, 0) * 75ms); }
+  html.js .rv.in { opacity: 1; transform: none; }
+  /* rise: text lines */
+  html.js .rv--up { transform: translateY(28px); }
+  /* row: list items arrive from the left */
+  html.js .rv--row { transform: translateX(-18px); transition-duration: 600ms; }
+  /* right: from the other side */
+  html.js .rv--right { transform: translateX(40px); transition-duration: 900ms; }
+  html.js .rv--left { transform: translateX(-40px); transition-duration: 900ms; }
+  /* sheet: paper laid on the table */
+  html.js .rv--sheet { transform: translateY(80px) rotate(-2.5deg); transform-origin: 20% 100%; transition-duration: 1100ms; }
+  /* print: the slip comes out of a printer */
+  html.js .rv--print { transform: translateY(-60px); transition-duration: 1200ms; transition-timing-function: var(--ease-in-out); }
+  /* zoom: settles from a slight scale */
+  html.js .rv--zoom { transform: scale(0.94); transition-duration: 1000ms; }
+  /* mask: picture opens upward */
+  html.js .rv--mask { opacity: 1; clip-path: inset(100% 0 0 0); transition: clip-path 1200ms var(--ease-in-out); }
+  html.js .rv--mask.in { clip-path: inset(0 0 0 0); }
+  /* letter: paragraphs fade with no travel, marker sweeps in */
+  html.js .rv--fade { transition-duration: 1100ms; }
+  html.js .letter mark::before { transform: scaleX(0); transition: transform 900ms var(--ease-out) 600ms; }
+  html.js .rv.in mark::before { transform: scaleX(1); }
+
+  /* hero wordmark: letters rise one by one */
+  html.js .hero .wordmark .ch { opacity: 0; transform: translateY(40%) rotate(4deg); animation: ch 1000ms var(--ease-out) both; animation-delay: calc(200ms + var(--c) * 70ms); }
+  @keyframes ch { to { opacity: 1; transform: none; } }
+  html.js .foot .wordmark .ch { opacity: 0; transform: translateY(60%); transition: opacity 900ms var(--ease-out), transform 900ms var(--ease-out); transition-delay: calc(var(--c) * 60ms); }
+  html.js .foot .wordmark.in .ch { opacity: 1; transform: none; }
+
+  /* mouth map: teeth appear from the front teeth back to the molars */
+  html.js .chart .tooth rect { opacity: 0; transform: scale(0.3); transition: opacity 500ms var(--ease-out), transform 600ms var(--ease-out), fill-opacity var(--t-hover) ease; transition-delay: calc(var(--k) * 32ms); }
+  html.js .chart.in .tooth rect { opacity: 1; transform: none; }
+  html.js .chart.in .tooth:active rect { transform: scale(0.9); transition-delay: 0ms; }
+  html.js .chart .gum { stroke-dasharray: 900; stroke-dashoffset: 900; transition: stroke-dashoffset 1400ms var(--ease-in-out); }
+  html.js .chart.in .gum { stroke-dashoffset: 0; }
+
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .stage-frame img, .stage-frame img.is-on, .stage-frame img.is-leaving { transition: opacity 300ms linear; transform: none; opacity: 0; }
+  .stage-frame img.is-on { opacity: 1; }
+  .stage-drift { inset: 0; }
+  .result.is-updating > * { animation: none; }
+  .tooth[aria-pressed="true"] rect { animation: none; }
+}
+
+/* ---------- Tablet & phone ---------- */
+@media (max-width: 1100px) {
+  .map-intro { grid-column: 1 / 13; margin-bottom: 56px; }
+  .map-chart { grid-column: 1 / 7; }
+  .map-side { grid-column: 7 / 13; }
+  .prices-side { grid-column: 1 / 13; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: end; }
+  .prices-side figure { margin-top: 0; }
+  .prices-list { grid-column: 1 / 13; margin-top: 64px; }
+  .prices-foot { grid-column: 1 / 13; }
+  .faq-head { grid-column: 1 / 13; margin-bottom: 48px; }
+  .faq-text { grid-column: 1 / 13; }
+}
+@media (max-width: 860px) {
+  :root { --step-display: 27vw; }
+  .split { display: block; }
+  .stage { position: relative; height: 58svh; padding: 12px 12px 0; grid-template-rows: 1fr; }
+  .stage-caption { display: none; }
+  .bar {
+    position: absolute;
+    top: 12px; left: 12px; right: 12px;
+    z-index: 3;
+    padding: 14px 14px 0;
+    color: var(--paper);
+  }
+  .bar .brand { display: none; }
+  .bar .links { display: none; }
+  .bar .menu-toggle {
+    display: inline-flex;
+    background: none; border: 0; padding: 8px 0;
+    color: var(--paper);
+    font: 600 var(--step-small)/1 var(--text);
+    cursor: pointer;
+  }
+  .bar.is-open .links {
+    display: grid;
+    position: fixed;
+    inset: 0;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 96px 24px 24px;
+    gap: 18px;
+    align-content: start;
+    font-family: var(--display);
+    font-size: var(--step-head);
+    line-height: 1.05;
+    z-index: 4;
+  }
+  .bar.is-open .links a { animation: menuIn 420ms var(--ease-out) both; }
+  .bar.is-open .links a:nth-child(2) { animation-delay: 50ms; }
+  .bar.is-open .links a:nth-child(3) { animation-delay: 100ms; }
+  .bar.is-open .links a:nth-child(4) { animation-delay: 150ms; }
+  @keyframes menuIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+  .bar.is-open .menu-toggle { position: relative; z-index: 5; }
+  .col { padding: 0 20px; position: static; }
+  .hero { min-height: 0; }
+  .hero .wordmark { order: -1; margin: 18px 0 0 -2px; padding-bottom: 0; }
+  .hero-copy { padding: 22px 0 0; }
+  .hero-sentence { font-size: 1.1875rem; }
+  .intro { padding: 72px 0 96px; }
+  .intro-col { width: 86%; }
+  .menu-ground { margin: 0 -20px; padding: 72px 12px; }
+  .sheet { padding: 56px 20px 64px; }
+  .group h3 { font-size: 1.25rem; }
+  .visit { padding: 112px 0 96px; }
+  .slip { padding: 28px 20px 52px; }
+  .slip-total { margin: 26px -20px 0; padding: 12px 20px; }
+  .letter { padding: 96px 0 112px; }
+  .team li { grid-template-columns: 1fr; gap: 0; }
+  .map { padding: 104px 0 112px; }
+  .map-chart, .map-side { grid-column: 1 / 13; }
+  .map-side { margin-top: 48px; }
+  .result { padding: 24px 20px; }
+  .prices { padding: 112px 0 104px; }
+  .prices-side { grid-template-columns: 1fr; }
+  .prices-side figure { width: 60%; }
+  .prices-list { columns: 1; margin-top: 40px; }
+  .faq { padding: 104px 0 112px; }
+  .faq-text { columns: 1; }
+  .crow { min-height: 84px; padding: 0 16px 16px; font-size: 9.4vw; }
+  .crow--cta { justify-content: space-between; padding-top: 16px; }
+  .crow--cta .square-go { width: 56px; height: 56px; font-size: 1.5rem; }
+  .foot { min-height: 88svh; }
+  .foot-top { flex-direction: column; gap: 24px; }
+  .foot-contact { text-align: left; }
+}
+</style>
+</head>
+<body>
+
+<div class="split">
+  <aside class="stage" aria-label="Fotografías">
+    <div class="stage-frame">
+      <div class="stage-drift">
+        <img class="is-on" data-photo="sonrisa" src="assets/sonrisa.jpg" width="1800" height="1200" alt="Mujer sonriendo con dientes sanos y blancos." style="object-position:58% 40%">
+        <img data-photo="ventana" src="assets/consultorio-ventana.jpg" width="1400" height="2100" alt="Sillón dental blanco junto a una ventana con luz natural.">
+        <img data-photo="alineadores" src="assets/alineadores.jpg" width="1400" height="1000" alt="Manos sosteniendo alineadores dentales transparentes y su estuche." style="object-position:45% 50%">
+        <img data-photo="radiografias" src="assets/radiografias.jpg" width="1800" height="1200" alt="Odontólogo revisando radiografías dentales en una pantalla de luz." style="object-position:62% 50%">
+        <img data-photo="espejo" src="assets/espejo.jpg" width="1400" height="1866" alt="Espejo dental y explorador sobre una superficie blanca.">
+      </div>
+    </div>
+    <p class="stage-caption" aria-live="polite">Lunes a viernes de 7:00 a 19:00, sábados de 8:00 a 13:00.</p>
+  </aside>
+
+  <main class="col" id="inicio">
+    <header class="bar" id="bar">
+      <a class="brand" href="#inicio">Odontología Ejemplo</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">Menú</button>
+      <div class="bar-right">
+        <nav class="links" id="nav-links" aria-label="Principal">
+          <a href="#tratamientos">Tratamientos</a>
+          <a href="#precios">Precios</a>
+          <a href="#mapa">¿Dónde te duele?</a>
+        </nav>
+        <a class="btn" href="https://wa.me/573005550193?text=Hola%2C%20quisiera%20pedir%20una%20primera%20cita%20de%20valoraci%C3%B3n%20en%20Odontolog%C3%ADa%20Ejemplo.">Pedir cita <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </header>
+
+    <section class="hero" data-photo="sonrisa" aria-labelledby="titulo">
+      <div class="hero-copy">
+        <p class="hero-sentence rv rv--up" style="--i:6">Odontología sin prisa ni dolor, en el Chicó, Bogotá.</p>
+        <div class="hero-meta rv rv--up" style="--i:8">
+          <a class="btn" href="https://wa.me/573005550193?text=Hola%2C%20quisiera%20pedir%20una%20primera%20cita%20de%20valoraci%C3%B3n%20en%20Odontolog%C3%ADa%20Ejemplo.">Pedir primera cita <span class="arrow" aria-hidden="true">→</span></a>
+          <p>Valoración completa: 65 minutos, $120.000.</p>
+        </div>
+      </div>
+      <h1 class="wordmark" id="titulo" aria-label="Odontología Ejemplo"><span class="wordmark-inner split-letters">ejemplo</span></h1>
+    </section>
+
+    <section class="intro" data-photo="ventana" aria-label="Cómo trabajamos">
+      <div class="intro-col">
+        <p class="rv rv--up">Somos una clínica pequeña en el Chicó: cuatro especialistas, tres consultorios con luz natural y una sola regla, que nadie tenga prisa.</p>
+        <p class="rv rv--up" style="--i:1">Cada cita dura una hora completa. Nadie entra mientras estás en la silla y nunca hay otra persona esperando tu turno.</p>
+        <p class="rv rv--up" style="--i:2">Usamos anestesia computarizada, que entra despacio y casi no se siente. Si levantas la mano, paramos. Siempre.</p>
+        <p class="rv rv--up" style="--i:3">Antes de tocar un diente te damos un presupuesto escrito y cerrado. Lo que firmas es lo que pagas.</p>
+        <p class="rv rv--up" style="--i:4">Si hace años que no vas al dentista, empieza aquí: <a class="link" href="#primera-visita">así es la primera visita</a>.</p>
+      </div>
+    </section>
+
+    <section class="menu-ground" id="tratamientos" data-photo="alineadores" aria-labelledby="t-tratamientos">
+      <div class="rv rv--sheet">
+      <div class="sheet zig" data-zig="both">
+        <h2 class="head" id="t-tratamientos">Lo que hacemos</h2>
+
+        <div class="group">
+          <h3 class="rv rv--up">Cuidar</h3>
+          <div class="row rv rv--row" style="--i:1"><div class="row-line"><span class="row-name">Valoración completa</span><span class="leader" aria-hidden="true"></span><span class="row-value">65 min</span></div><p class="row-desc">Revisión, fotos, radiografía panorámica y un plan escrito.</p></div>
+          <div class="row rv rv--row" style="--i:2"><div class="row-line"><span class="row-name">Limpieza profunda</span><span class="leader" aria-hidden="true"></span><span class="row-value">45 min</span></div><p class="row-desc">Ultrasonido suave y pulido, sin raspar a la fuerza.</p></div>
+          <div class="row rv rv--row" style="--i:3"><div class="row-line"><span class="row-name">Sellantes para niños</span><span class="leader" aria-hidden="true"></span><span class="row-value">20 min</span></div><p class="row-desc">Protegen las muelas nuevas de las caries, sin anestesia.</p></div>
+        </div>
+
+        <div class="group">
+          <h3 class="rv rv--up">Reparar</h3>
+          <div class="row rv rv--row" style="--i:1"><div class="row-line"><span class="row-name">Resinas del color del diente</span><span class="leader" aria-hidden="true"></span><span class="row-value">45 min</span></div><p class="row-desc">Calzas que no se notan, también para cambiar las metálicas.</p></div>
+          <div class="row rv rv--row" style="--i:2"><div class="row-line"><span class="row-name">Endodoncia</span><span class="leader" aria-hidden="true"></span><span class="row-value">2 citas</span></div><p class="row-desc">Tratamiento de conducto con microscopio y anestesia lenta.</p></div>
+          <div class="row rv rv--row" style="--i:3"><div class="row-line"><span class="row-name">Coronas de cerámica</span><span class="leader" aria-hidden="true"></span><span class="row-value">2 citas</span></div><p class="row-desc">Las pruebas en tu boca antes de cementarlas.</p></div>
+        </div>
+
+        <div class="group">
+          <h3 class="rv rv--up">Alinear</h3>
+          <div class="row rv rv--row" style="--i:1"><div class="row-line"><span class="row-name">Alineadores invisibles</span><span class="leader" aria-hidden="true"></span><span class="row-value">12–18 meses</span></div><p class="row-desc">Ves la simulación de tu sonrisa final antes de decidir.</p></div>
+          <div class="row rv rv--row" style="--i:2"><div class="row-line"><span class="row-name">Brackets estéticos</span><span class="leader" aria-hidden="true"></span><span class="row-value">18–24 meses</span></div><p class="row-desc">De cerámica, del tono del diente.</p></div>
+        </div>
+
+        <div class="group">
+          <h3 class="rv rv--up">Reponer</h3>
+          <div class="row rv rv--row" style="--i:1"><div class="row-line"><span class="row-name">Implantes</span><span class="leader" aria-hidden="true"></span><span class="row-value">3 citas</span></div><p class="row-desc">Cirugía guiada por computador; la corona llega en cuatro meses.</p></div>
+          <div class="row rv rv--row" style="--i:2"><div class="row-line"><span class="row-name">Extracción de cordales</span><span class="leader" aria-hidden="true"></span><span class="row-value">45 min</span></div><p class="row-desc">Con sedación consciente si la prefieres.</p></div>
+        </div>
+
+        <div class="group">
+          <h3 class="rv rv--up">Estética</h3>
+          <div class="row rv rv--row" style="--i:1"><div class="row-line"><span class="row-name">Blanqueamiento</span><span class="leader" aria-hidden="true"></span><span class="row-value">90 min</span></div><p class="row-desc">En consultorio, con protección para encías sensibles.</p></div>
+          <div class="row rv rv--row" style="--i:2"><div class="row-line"><span class="row-name">Carillas de cerámica</span><span class="leader" aria-hidden="true"></span><span class="row-value">2 citas</span></div><p class="row-desc">Te mostramos el resultado en tu boca, en cera, antes de empezar.</p></div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="visit" id="primera-visita" data-photo="radiografias" aria-labelledby="t-visita">
+      <div class="visit-head">
+        <h2 class="head rv rv--zoom" id="t-visita">Tu primera visita</h2>
+        <p class="rv rv--up" style="--i:1">Sesenta y cinco minutos, sin bata blanca y sin sorpresas. Esto es lo que pasa, de principio a fin.</p>
+      </div>
+      <div class="slip-ground">
+        <div class="rv rv--print" style="--i:2">
+        <div class="slip zig" data-zig="bottom">
+          <h3>Antes de llegar</h3>
+          <div class="row"><div class="row-line"><span class="row-name">Te confirmamos por WhatsApp</span><span class="leader" aria-hidden="true"></span><span class="row-value">1 día antes</span></div></div>
+          <div class="row"><div class="row-line"><span class="row-name">Llenas tu historia de salud</span><span class="leader" aria-hidden="true"></span><span class="row-value">5 min</span></div><p class="row-desc">Desde el celular, en casa y con calma.</p></div>
+
+          <h3>En la silla</h3>
+          <div class="row"><div class="row-line"><span class="row-name">Hablamos de lo que te preocupa</span><span class="leader" aria-hidden="true"></span><span class="row-value">10 min</span></div><p class="row-desc">Sentados frente a frente, sin instrumentos a la vista.</p></div>
+          <div class="row"><div class="row-line"><span class="row-name">Fotos y radiografía panorámica</span><span class="leader" aria-hidden="true"></span><span class="row-value">10 min</span></div></div>
+          <div class="row"><div class="row-line"><span class="row-name">Ves tu boca en la pantalla</span><span class="leader" aria-hidden="true"></span><span class="row-value">20 min</span></div><p class="row-desc">Te explicamos cada diente con tus propias fotos.</p></div>
+          <div class="row"><div class="row-line"><span class="row-name">Limpieza suave, si la quieres</span><span class="leader" aria-hidden="true"></span><span class="row-value">15 min</span></div></div>
+
+          <h3>Al salir</h3>
+          <div class="row"><div class="row-line"><span class="row-name">Plan con precios y fechas</span><span class="leader" aria-hidden="true"></span><span class="row-value">5 min</span></div><p class="row-desc">Por escrito, para que lo pienses en casa.</p></div>
+
+          <p class="slip-total"><span>Sales con un plan y un precio cerrado</span><span>65 min</span></p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="letter" id="equipo" data-photo="espejo" aria-label="Carta de la fundadora y equipo">
+      <div class="letter-body">
+        <p class="rv rv--fade">Abrí Odontología Ejemplo en 2019, después de doce años en clínicas donde cada paciente tenía veinte minutos. Veinte minutos no alcanzan para explicar nada, y menos a alguien que llega con miedo.</p>
+        <p class="rv rv--fade" style="--i:2">Aquí cada cita dura una hora. Te explico lo que veo antes de hacer cualquier cosa, y lo que hago lo ves en la pantalla. Si algo te incomoda, <mark>levantas la mano y paramos</mark>.</p>
+        <p class="rv rv--fade" style="--i:4">Somos cuatro. Andrés hace las endodoncias con microscopio, Laura lleva la ortodoncia, Camila es la higienista que te verá dos veces al año y yo me encargo de la rehabilitación y los implantes.</p>
+        <p class="rv rv--fade" style="--i:6">No tenemos promociones ni paquetes. Tenemos un precio por tratamiento, escrito, y el tiempo que haga falta.</p>
+        <div class="sign rv rv--up" style="--i:7">
+          <p class="sign-name">Valentina Ospina</p>
+          <p class="sign-role">Odontóloga, rehabilitación oral. Fundadora de Odontología Ejemplo.</p>
+        </div>
+      </div>
+      <ul class="team" aria-label="Equipo">
+        <li class="rv rv--right"><strong>Dra. Valentina Ospina</strong><span>Rehabilitación oral e implantes</span></li>
+        <li class="rv rv--right" style="--i:1"><strong>Dr. Andrés Rueda</strong><span>Endodoncia con microscopio</span></li>
+        <li class="rv rv--right" style="--i:2"><strong>Dra. Laura Méndez</strong><span>Ortodoncia y alineadores</span></li>
+        <li class="rv rv--right" style="--i:3"><strong>Camila Torres</strong><span>Higiene oral y prevención</span></li>
+      </ul>
+    </section>
+  </main>
+</div>
+
+<section class="map" id="mapa" aria-labelledby="t-mapa">
+  <div class="wrap grid12">
+    <div class="map-intro">
+      <h2 class="head rv rv--up" id="t-mapa">¿Dónde te duele?</h2>
+      <p class="rv rv--up" style="--i:1">No hace falta saber qué diente es. Toca la zona de tu boca que te molesta, dinos qué sientes y te contamos qué suele necesitar, cuánto tarda y cuánto cuesta.</p>
+    </div>
+    <div class="map-chart">
+      <div class="chart rv" id="chart">
+        <svg id="mouth" viewBox="0 0 400 540" role="group" aria-label="Mapa de la boca, visto como en un espejo">
+          <g id="gums"></g>
+          <text class="zone zone--big" x="200" y="178" text-anchor="middle">Arriba</text>
+          <text class="zone zone--big" x="200" y="372" text-anchor="middle">Abajo</text>
+          <text class="zone" x="0" y="276">Izquierda</text>
+          <text class="zone" x="400" y="276" text-anchor="end">Derecha</text>
+          <g id="teeth"></g>
+        </svg>
+        <p class="chart-note">Como te ves en el espejo. Las muelas del fondo también cuentan.</p>
+        <noscript><p class="chart-note">El mapa necesita JavaScript. Puedes contarnos dónde te duele por WhatsApp al +57 300 555 0193.</p></noscript>
+      </div>
+    </div>
+    <div class="map-side">
+      <fieldset class="symptoms rv rv--up" style="--i:2">
+        <legend>¿Qué sientes?</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="sintoma" value="frio" checked><span>Me duele con frío o dulce</span></label>
+          <label class="chip"><input type="radio" name="sintoma" value="morder"><span>Me duele al morder o sin razón</span></label>
+          <label class="chip"><input type="radio" name="sintoma" value="roto"><span>Está roto o despicado</span></label>
+          <label class="chip"><input type="radio" name="sintoma" value="falta"><span>Está flojo o me falta</span></label>
+          <label class="chip"><input type="radio" name="sintoma" value="estetica"><span>Quiero que se vea mejor</span></label>
+          <label class="chip"><input type="radio" name="sintoma" value="revision"><span>Solo quiero una revisión</span></label>
+        </div>
+      </fieldset>
+
+      <div class="result rv rv--up" style="--i:3" id="result" aria-live="polite">
+        <p class="result-tooth" id="r-tooth">Primera muela de arriba, lado derecho</p>
+        <p class="result-what" id="r-what">Resina del color del diente</p>
+        <dl class="result-facts">
+          <div><dt>Tiempo</dt><dd id="r-time">1 cita de 45 min</dd></div>
+          <div><dt>Desde</dt><dd id="r-price">$160.000</dd></div>
+        </dl>
+        <p class="result-note" id="r-note">El dolor con frío o dulce suele ser una caries pequeña o un cuello del diente expuesto. Es una orientación, no un diagnóstico: lo confirmamos en la valoración.</p>
+        <div><a class="btn btn--light" id="r-cta" href="https://wa.me/573005550193?text=Hola%2C%20me%20molesta%20un%20diente%20y%20quisiera%20una%20cita.">Pedir cita para esta zona <span class="arrow" aria-hidden="true">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prices" id="precios" aria-labelledby="t-precios">
+  <div class="wrap grid12">
+    <div class="prices-side">
+      <h2 class="head rv rv--up" id="t-precios">Precios</h2>
+      <figure class="rv rv--zoom" style="--i:1">
+        <img src="assets/consultorio-ventana.jpg" width="1400" height="2100" alt="Sillón dental blanco junto a una ventana con luz natural.">
+      </figure>
+      <p class="prices-side-cap rv rv--up" style="--i:2; margin-top:10px; font-size:var(--step-small); color:var(--muted)">Sin costos escondidos: lo que ves aquí es lo que pagas.</p>
+    </div>
+    <div class="prices-list">
+      <div class="pgroup rv rv--up">
+        <h3>Cuidar</h3>
+        <div class="price"><div class="price-line"><span>Valoración con radiografía</span><b data-n="120000">120.000</b></div><p>Incluye fotos, panorámica y plan escrito.</p></div>
+        <div class="price"><div class="price-line"><span>Limpieza profunda</span><b data-n="180000">180.000</b></div><p>Ultrasonido, pulido y flúor.</p></div>
+        <div class="price"><div class="price-line"><span>Sellantes, por diente</span><b data-n="70000">70.000</b></div><p>Para niños desde los 6 años.</p></div>
+      </div>
+      <div class="pgroup rv rv--up">
+        <h3>Reparar</h3>
+        <div class="price"><div class="price-line"><span>Resina, por superficie</span><b data-n="160000">160.000</b></div><p>Del color exacto de tu diente.</p></div>
+        <div class="price"><div class="price-line"><span>Endodoncia de un conducto</span><b data-n="520000">520.000</b></div><p>Dientes de adelante, colmillos y premolares.</p></div>
+        <div class="price"><div class="price-line"><span>Endodoncia de muela</span><b data-n="750000">750.000</b></div><p>Con microscopio, en dos citas.</p></div>
+        <div class="price"><div class="price-line"><span>Incrustación de cerámica</span><b data-n="1250000">1.250.000</b></div><p>Cuando la calza ya es demasiado grande.</p></div>
+        <div class="price"><div class="price-line"><span>Corona de cerámica</span><b data-n="1600000">1.600.000</b></div><p>Incluye la corona provisional.</p></div>
+      </div>
+      <div class="pgroup rv rv--up">
+        <h3>Alinear</h3>
+        <div class="price"><div class="price-line"><span>Alineadores invisibles</span><b data-n="9500000">9.500.000</b></div><p>Tratamiento completo, con retenedores.</p></div>
+        <div class="price"><div class="price-line"><span>Brackets estéticos</span><b data-n="4800000">4.800.000</b></div><p>Tratamiento completo, controles incluidos.</p></div>
+        <div class="price"><div class="price-line"><span>Retenedores nuevos</span><b data-n="450000">450.000</b></div><p>Superior e inferior.</p></div>
+      </div>
+      <div class="pgroup rv rv--up">
+        <h3>Reponer</h3>
+        <div class="price"><div class="price-line"><span>Implante con corona</span><b data-n="4200000">4.200.000</b></div><p>Cirugía guiada, corona de cerámica y controles.</p></div>
+        <div class="price"><div class="price-line"><span>Injerto de hueso</span><b data-n="1100000">1.100.000</b></div><p>Solo si la valoración lo muestra necesario.</p></div>
+        <div class="price"><div class="price-line"><span>Extracción de cordal</span><b data-n="450000">450.000</b></div><p>Por muela del juicio, con control a la semana.</p></div>
+      </div>
+      <div class="pgroup rv rv--up">
+        <h3>Estética</h3>
+        <div class="price"><div class="price-line"><span>Blanqueamiento</span><b data-n="850000">850.000</b></div><p>En consultorio, con férulas para retoque en casa.</p></div>
+        <div class="price"><div class="price-line"><span>Carilla de cerámica</span><b data-n="1400000">1.400.000</b></div><p>Por diente, con prueba en cera.</p></div>
+      </div>
+    </div>
+    <p class="prices-foot rv rv--up">Precios de 2026, en pesos colombianos. Pagas por cita, no por adelantado, y puedes diferir los tratamientos largos hasta en 12 cuotas sin interés con tarjeta de crédito.</p>
+  </div>
+</section>
+
+<section class="faq" id="preguntas" aria-labelledby="t-preguntas">
+  <div class="wrap grid12">
+    <h2 class="head faq-head rv rv--zoom" id="t-preguntas">Preguntas</h2>
+    <div class="faq-text">
+      <p class="rv rv--up"><b>¿Duele?</b> Casi nunca. Primero ponemos un gel que duerme la encía y después la anestesia entra con un equipo computarizado, gota a gota, que es lo que evita el pinchazo fuerte.</p>
+      <p class="rv rv--up" style="--i:1"><b>¿Y si me da pánico en la silla?</b> Levantas la mano y paramos, sin preguntas. Puedes traer tus audífonos, pedir pausas y, en procedimientos largos, elegir sedación consciente.</p>
+      <p class="rv rv--up" style="--i:2"><b>¿Atienden con prepagada o seguro?</b> Trabajamos por reembolso: te entregamos la factura y los soportes que pide tu prepagada. No tenemos convenio con EPS.</p>
+      <p class="rv rv--up" style="--i:3"><b>¿Cuánto dura una cita?</b> Una hora. Si el tratamiento necesita menos, el tiempo que sobra es para resolver tus dudas.</p>
+      <p class="rv rv--up" style="--i:4"><b>¿Atienden niños?</b> Desde los 4 años. La primera cita de un niño es solo para conocer el consultorio y contar dientes.</p>
+      <p class="rv rv--up" style="--i:5"><b>¿Puedo pagar a cuotas?</b> Sí. Pagas cada cita al terminarla, y los tratamientos largos se pueden diferir hasta en 12 cuotas sin interés con tarjeta de crédito.</p>
+      <p class="rv rv--up" style="--i:6"><b>¿Atienden urgencias?</b> De lunes a sábado guardamos dos espacios al día para dolor. Escríbenos por WhatsApp antes de las 10 de la mañana.</p>
+      <p class="rv rv--up" style="--i:7"><b>¿Qué pasa si no puedo ir?</b> Avísanos con 24 horas y movemos la cita sin costo. Ese espacio se lo damos a una urgencia.</p>
+      <p class="rv rv--up" style="--i:8"><b>¿Los alineadores sirven para cualquier caso?</b> Para la mayoría. En la valoración te mostramos la simulación y, si tu caso va mejor con brackets, te lo decimos.</p>
+      <p class="rv rv--up" style="--i:9"><b>¿Cada cuánto debo volver?</b> Cada seis meses para limpieza y revisión. Te escribimos nosotros cuando se acerque la fecha.</p>
+      <p class="rv rv--up" style="--i:10"><b>¿Hay parqueadero?</b> Sí, en el sótano del edificio, con dos horas gratis. También llegas caminando desde la estación de la calle 93.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto" aria-label="Contacto">
+  <p class="crow rv rv--left">Odontología Ejemplo</p>
+  <p class="crow rv rv--right"><a href="https://maps.google.com/?q=Carrera%2011%2093-52%20Bogot%C3%A1">Carrera 11 # 93-52, piso 4 <span class="go" aria-hidden="true">↗</span></a></p>
+  <p class="crow rv rv--left">Chicó, Bogotá</p>
+  <p class="crow rv rv--right">Lun a vie 7–19 · sáb 8–13</p>
+  <p class="crow rv rv--left"><a href="tel:+573005550193">+57 300 555 0193</a></p>
+  <p class="crow crow--cta rv rv--right"><a href="https://wa.me/573005550193?text=Hola%2C%20quisiera%20pedir%20una%20cita%20en%20Odontolog%C3%ADa%20Ejemplo.">Escríbenos <span class="square-go" aria-hidden="true">→</span></a></p>
+</section>
+
+<footer class="foot">
+  <img class="foot-photo" src="assets/consultorio-madera.jpg" width="2200" height="1467" alt="" loading="lazy">
+  <div class="foot-top">
+    <ul>
+      <li><a href="#tratamientos">Tratamientos</a></li>
+      <li><a href="#primera-visita">Primera visita</a></li>
+      <li><a href="#mapa">¿Dónde te duele?</a></li>
+      <li><a href="#precios">Precios</a></li>
+      <li><a href="#preguntas">Preguntas</a></li>
+    </ul>
+    <ul class="foot-contact">
+      <li>Carrera 11 # 93-52, piso 4</li>
+      <li>Chicó, Bogotá</li>
+      <li><a href="tel:+573005550193">+57 300 555 0193</a></li>
+      <li><a href="mailto:hola@odontologiaejemplo.com">hola@odontologiaejemplo.com</a></li>
+    </ul>
+  </div>
+  <div class="foot-bottom">
+    <p class="wordmark split-letters" aria-hidden="true">ejemplo</p>
+    <p class="legal">© 2026 Odontología Ejemplo S.A.S. Prestador inscrito en el REPS de la Secretaría de Salud de Bogotá. Directora científica: Dra. Valentina Ospina.</p>
+    <p class="legal">Fotografías de Unsplash (licencia Unsplash): <a href="https://unsplash.com/photos/1AhGNGKuhR0">@jblesly</a>, <a href="https://unsplash.com/photos/44jaETSVX2I">@katasha</a>, <a href="https://unsplash.com/photos/v_2FRXEba94">@jonathanborba</a>, <a href="https://unsplash.com/photos/WFsNCIn8OF4">@candid</a>, <a href="https://unsplash.com/photos/Fdku_oMrDvk">@karibjorn</a> y <a href="https://unsplash.com/photos/ux18C551ghI">@carocaro1987</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var money = new Intl.NumberFormat('es-CO');
+
+  /* Split the wordmarks into letters for the letter-by-letter entrance */
+  document.querySelectorAll('.split-letters').forEach(function (el) {
+    var t = el.textContent;
+    el.textContent = '';
+    t.split('').forEach(function (c, i) {
+      var s = document.createElement('span');
+      s.className = 'ch';
+      s.style.setProperty('--c', i);
+      s.textContent = c;
+      el.appendChild(s);
+    });
+  });
+  var footMark = document.querySelector('.foot .wordmark');
+  footMark.classList.add('rv');
+  footMark.style.opacity = '1';
+
+  /* Zigzag paper edges, cut like a row of teeth */
+  function zig(el) {
+    var mode = el.getAttribute('data-zig');
+    var n = Math.max(10, Math.round(el.offsetWidth / 26));
+    var d = 9, pts = [], i, x;
+    if (mode === 'both') {
+      for (i = 0; i <= n; i++) { x = (i / n) * 100; pts.push(x.toFixed(3) + '% ' + (i % 2 ? d : 0) + 'px'); }
+    } else {
+      pts.push('0% 0px', '100% 0px');
+    }
+    for (i = n; i >= 0; i--) { x = (i / n) * 100; pts.push(x.toFixed(3) + '% calc(100% - ' + (i % 2 ? d : 0) + 'px)'); }
+    el.style.clipPath = 'polygon(' + pts.join(',') + ')';
+  }
+  var zigs = document.querySelectorAll('.zig');
+  function allZig() { zigs.forEach(zig); }
+  allZig();
+  window.addEventListener('resize', allZig);
+
+  /* Prices count up once when their group arrives */
+  function countUp(group) {
+    group.querySelectorAll('b[data-n]').forEach(function (b, k) {
+      var end = +b.getAttribute('data-n');
+      var start = performance.now() + k * 90;
+      var dur = 900;
+      function tick(now) {
+        var p = Math.min(1, Math.max(0, (now - start) / dur));
+        var e = 1 - Math.pow(1 - p, 3);
+        b.textContent = money.format(Math.round(end * e / 1000) * 1000);
+        if (p < 1) requestAnimationFrame(tick); else b.textContent = money.format(end);
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  /* Section entrances */
+  var rvs = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window && !reduce) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('in');
+        if (e.target.classList.contains('pgroup')) countUp(e.target);
+        io.unobserve(e.target);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    rvs.forEach(function (el) { io.observe(el); });
+  } else {
+    rvs.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* The stage: the fixed picture wipes upward to the one for each section */
+  var captions = {
+    sonrisa: 'Lunes a viernes de 7:00 a 19:00, sábados de 8:00 a 13:00.',
+    ventana: 'Tres consultorios con luz natural. Ninguno huele a hospital.',
+    alineadores: 'Alineadores invisibles: ves tu sonrisa final antes de empezar.',
+    radiografias: 'Radiografía digital incluida en la valoración.',
+    espejo: 'Instrumental esterilizado y abierto frente a ti en cada cita.'
+  };
+  var imgs = document.querySelectorAll('.stage-frame img');
+  var cap = document.querySelector('.stage-caption');
+  var current = 'sonrisa';
+  var leaveTimer;
+  function show(name) {
+    if (name === current) return;
+    var prev = current;
+    current = name;
+    clearTimeout(leaveTimer);
+    imgs.forEach(function (im) {
+      var p = im.getAttribute('data-photo');
+      im.classList.remove('is-leaving');
+      if (p === prev) { im.classList.remove('is-on'); im.classList.add('is-leaving'); }
+      if (p === name) { im.classList.add('is-on'); }
+    });
+    leaveTimer = setTimeout(function () {
+      imgs.forEach(function (im) { im.classList.remove('is-leaving'); });
+    }, 1150);
+    cap.classList.add('is-swapping');
+    setTimeout(function () { cap.textContent = captions[name]; cap.classList.remove('is-swapping'); }, 240);
+  }
+  /* pick the section that crosses the middle of the screen, on every scroll */
+  var photoSections = document.querySelectorAll('.col [data-photo]');
+  function pickPhoto() {
+    var mid = window.innerHeight / 2, name = null;
+    photoSections.forEach(function (sec) {
+      var r = sec.getBoundingClientRect();
+      if (r.top <= mid && r.bottom > mid) name = sec.getAttribute('data-photo');
+    });
+    if (name) show(name);
+  }
+  window.addEventListener('scroll', pickPhoto, { passive: true });
+  window.addEventListener('resize', pickPhoto);
+  pickPhoto();
+
+  /* Phone menu */
+  var bar = document.getElementById('bar');
+  var toggle = bar.querySelector('.menu-toggle');
+  var links = document.getElementById('nav-links');
+  toggle.addEventListener('click', function () {
+    var open = bar.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.textContent = open ? 'Cerrar' : 'Menú';
+  });
+  links.addEventListener('click', function (e) {
+    if (e.target.tagName === 'A') { bar.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); toggle.textContent = 'Menú'; }
+  });
+
+  /* Scroll-linked motion for the photographs and the wordmark (works in every browser) */
+  if (!reduce) {
+    var drift = document.querySelector('.stage-drift');
+    var stage = document.querySelector('.stage');
+    var heroMark = document.querySelector('.hero .wordmark-inner');
+    var priceImg = document.querySelector('.prices-side img');
+    var footImg = document.querySelector('.foot-photo');
+    var ticking = false;
+    var target = { y: 0, s: 1.04 }, now = { y: 0, s: 1.065 }, easing = false;
+    function ease() {
+      now.y += (target.y - now.y) * 0.12;
+      now.s += (target.s - now.s) * 0.12;
+      drift.style.transform = 'translateY(' + now.y.toFixed(3) + '%) scale(' + now.s.toFixed(4) + ')';
+      if (Math.abs(target.y - now.y) > 0.01 || Math.abs(target.s - now.s) > 0.0005) {
+        if (!easing) { easing = true; requestAnimationFrame(function () { easing = false; ease(); }); }
+      }
+    }
+    function clamp(v) { return v < 0 ? 0 : v > 1 ? 1 : v; }
+    function progress(el) {
+      var r = el.getBoundingClientRect(), vh = window.innerHeight;
+      return clamp((vh - r.top) / (vh + r.height));
+    }
+    function frame() {
+      ticking = false;
+      var vh = window.innerHeight, y = window.scrollY;
+      if (getComputedStyle(stage).position === 'sticky') {
+        /* continuous with the scroll, so it never jumps when the section changes */
+        target.y = Math.sin(y / 520) * 3;
+        target.s = 1.04 + Math.cos(y / 760) * 0.025;
+        ease();
+      } else {
+        var m = clamp(y / vh);
+        drift.style.transform = 'translateY(' + (m * 8).toFixed(2) + '%) scale(' + (1 + m * 0.12).toFixed(3) + ')';
+      }
+      if (heroMark) {
+        var h = clamp(y / vh);
+        heroMark.style.display = 'inline-block';
+        heroMark.style.transformOrigin = '0 100%';
+        heroMark.style.transform = 'translateX(' + (h * -3).toFixed(2) + '%) scale(' + (1 - h * 0.1).toFixed(3) + ')';
+      }
+      if (priceImg) {
+        var pr = progress(priceImg.parentNode);
+        priceImg.style.transform = 'translateY(' + ((0.5 - pr) * 14).toFixed(2) + '%) scale(1.2)';
+      }
+      if (footImg) {
+        var fr = progress(footImg.parentNode);
+        footImg.style.transform = 'scale(' + (1.25 - Math.min(1, fr * 2) * 0.25).toFixed(3) + ')';
+      }
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    frame();
+  }
+
+  /* ---------- The mouth map: two arches, as seen in a mirror ---------- */
+  var NS = 'http://www.w3.org/2000/svg';
+  var names = { 1: 'diente de adelante', 2: 'diente de adelante', 3: 'colmillo', 4: 'premolar', 5: 'premolar', 6: 'primera muela', 7: 'segunda muela', 8: 'muela del juicio' };
+  var zone = { 1: 'de arriba, lado derecho', 2: 'de arriba, lado izquierdo', 3: 'de abajo, lado izquierdo', 4: 'de abajo, lado derecho' };
+  /* width along the arch, depth across it */
+  var size = { 1: [26, 21], 2: [21, 20], 3: [23, 24], 4: [24, 25], 5: [24, 25], 6: [34, 33], 7: [32, 32], 8: [29, 29] };
+  function kind(p) { return p <= 2 ? 'incisor' : p === 3 ? 'canine' : p <= 5 ? 'premolar' : 'molar'; }
+
+  var CX = 200, A = 150, B = 196, GAP = 3.2;
+  var UPPER_CY = 250, LOWER_CY = 290;
+
+  /* sample the quarter ellipse to place teeth by arc length */
+  function arcTable() {
+    var tbl = [{ t: 0, s: 0 }], s = 0, prev = [0, -B], steps = 600;
+    for (var i = 1; i <= steps; i++) {
+      var t = (i / steps) * (Math.PI * 0.62);
+      var pt = [A * Math.sin(t), -B * Math.cos(t)];
+      s += Math.hypot(pt[0] - prev[0], pt[1] - prev[1]);
+      tbl.push({ t: t, s: s });
+      prev = pt;
+    }
+    return tbl;
+  }
+  var table = arcTable();
+  function tAt(s) {
+    for (var i = 1; i < table.length; i++) {
+      if (table[i].s >= s) {
+        var a = table[i - 1], b = table[i];
+        return a.t + (b.t - a.t) * ((s - a.s) / (b.s - a.s));
+      }
+    }
+    return table[table.length - 1].t;
+  }
+  var tPos = {}, run = GAP / 2;
+  for (var p = 1; p <= 8; p++) {
+    run += size[p][0] / 2;
+    tPos[p] = tAt(run);
+    run += size[p][0] / 2 + GAP;
+  }
+  var gumEnd = tAt(run + 4);
+
+  function gumPath(upper, side) {
+    var pts = [], i, t, x, y;
+    for (i = 0; i <= 40; i++) {
+      t = (i / 40) * gumEnd;
+      x = CX + side * A * Math.sin(t);
+      y = upper ? UPPER_CY - B * Math.cos(t) : LOWER_CY + B * Math.cos(t);
+      pts.push((i ? 'L' : 'M') + x.toFixed(1) + ' ' + y.toFixed(1));
+    }
+    return pts.join(' ');
+  }
+  var gums = document.getElementById('gums');
+  [[true, 1], [true, -1], [false, 1], [false, -1]].forEach(function (g) {
+    var path = document.createElementNS(NS, 'path');
+    path.setAttribute('class', 'gum');
+    path.setAttribute('d', gumPath(g[0], g[1]));
+    gums.appendChild(path);
+  });
+
+  var teethG = document.getElementById('teeth');
+  /* mirror view: the patient's right side is on the right of the screen */
+  [1, 2, 3, 4].forEach(function (q) {
+    var upper = q === 1 || q === 2;
+    var side = (q === 1 || q === 4) ? 1 : -1;
+    for (var p = 1; p <= 8; p++) {
+      var t = tPos[p];
+      var x = CX + side * A * Math.sin(t);
+      var y = upper ? UPPER_CY - B * Math.cos(t) : LOWER_CY + B * Math.cos(t);
+      var dx = side * A * Math.cos(t);
+      var dy = (upper ? 1 : -1) * B * Math.sin(t);
+      var ang = Math.atan2(dy, dx) * 180 / Math.PI;
+      if (side < 0) ang += 180;
+      var w = size[p][0], h = size[p][1];
+      var g = document.createElementNS(NS, 'g');
+      g.setAttribute('class', 'tooth');
+      g.setAttribute('transform', 'translate(' + x.toFixed(1) + ' ' + y.toFixed(1) + ') rotate(' + ang.toFixed(1) + ')');
+      g.setAttribute('role', 'button');
+      g.setAttribute('tabindex', '0');
+      g.setAttribute('aria-pressed', 'false');
+      g.setAttribute('aria-label', names[p] + ' ' + zone[q]);
+      g.dataset.q = q; g.dataset.p = p;
+      g.style.setProperty('--k', (p - 1) * 2 + (upper ? 0 : 1));
+      var r = document.createElementNS(NS, 'rect');
+      r.setAttribute('x', -w / 2); r.setAttribute('y', -h / 2);
+      r.setAttribute('width', w); r.setAttribute('height', h);
+      var rr = kind(p) === 'molar' ? 9 : kind(p) === 'incisor' ? 6 : 10;
+      r.setAttribute('rx', rr); r.setAttribute('ry', rr);
+      g.appendChild(r);
+      teethG.appendChild(g);
+    }
+  });
+
+  function plan(p, s) {
+    var k = kind(p);
+    var front = k === 'incisor' || k === 'canine';
+    switch (s) {
+      case 'frio':
+        return { what: 'Resina del color del diente', time: '1 cita de 45 min', price: 160000,
+          note: 'El dolor con frío o dulce suele ser una caries pequeña o un cuello del diente expuesto.' };
+      case 'morder':
+        if (p === 8) return { what: 'Extracción de la muela del juicio', time: '1 cita de 45 min', price: 450000,
+          note: 'Una muela del juicio que duele al morder suele estar inflamada o mal ubicada. Lo vemos en la radiografía.' };
+        return { what: 'Endodoncia', time: '2 citas de 60 min', price: k === 'molar' ? 750000 : 520000,
+          note: 'Un dolor al morder o que aparece sin razón suele venir del nervio. Lo tratamos con microscopio, sin afán.' };
+      case 'roto':
+        if (front) return { what: 'Resina estética o carilla', time: '1 a 2 citas', price: 380000,
+          note: 'Si el pedazo es pequeño lo reconstruimos en una cita; si es grande, te proponemos una carilla.' };
+        return { what: 'Incrustación o corona de cerámica', time: '2 citas de 60 min', price: 1250000,
+          note: 'Una muela partida necesita una pieza que la abrace. La diseñamos y te la probamos antes de cementarla.' };
+      case 'falta':
+        if (p === 8) return { what: 'Revisión de la muela del juicio', time: '1 cita de 30 min', price: 120000,
+          note: 'Una muela del juicio que falta casi nunca se repone. Si está floja, revisamos la encía y el hueso.' };
+        return { what: 'Implante con corona', time: '3 citas en 4 meses', price: 4200000,
+          note: 'Si el diente está flojo, primero intentamos salvarlo. Si ya falta, un implante lo repone sin tocar los vecinos.' };
+      case 'estetica':
+        if (front) return { what: 'Blanqueamiento o carillas', time: '1 a 2 citas', price: 850000,
+          note: 'Muchas veces basta con blanquear. Antes de cualquier carilla te mostramos el resultado en cera.' };
+        return { what: 'Cambio de calza metálica por resina', time: '1 cita de 45 min', price: 160000,
+          note: 'Las calzas oscuras se cambian por resina del color del diente, una superficie a la vez.' };
+      default:
+        return { what: 'Valoración completa y limpieza', time: '1 cita de 65 min', price: 120000,
+          note: 'Revisamos todos tus dientes, no solo este, y sales con un plan escrito.' };
+    }
+  }
+
+  var state = { q: 1, p: 6, s: 'frio' };
+  var result = document.getElementById('result');
+  var labels = { frio: 'me duele con frío o dulce', morder: 'me duele al morder o sin razón', roto: 'está roto o despicado', falta: 'está flojo o me falta', estetica: 'quiero que se vea mejor', revision: 'quiero una revisión' };
+  function cap1(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+  function render(animate) {
+    document.querySelectorAll('.tooth').forEach(function (t) {
+      t.setAttribute('aria-pressed', (+t.dataset.q === state.q && +t.dataset.p === state.p) ? 'true' : 'false');
+    });
+    var r = plan(state.p, state.s);
+    var where = names[state.p] + ' ' + zone[state.q];
+    document.getElementById('r-tooth').textContent = cap1(where);
+    document.getElementById('r-what').textContent = r.what;
+    document.getElementById('r-time').textContent = r.time;
+    document.getElementById('r-price').textContent = '$' + money.format(r.price);
+    document.getElementById('r-note').textContent = r.note + ' Es una orientación, no un diagnóstico: lo confirmamos en la valoración.';
+    var msg = 'Hola, quisiera una cita en Odontología Ejemplo. Zona que me molesta: ' + where + '. ' + cap1(labels[state.s]) + '.';
+    document.getElementById('r-cta').href = 'https://wa.me/573005550193?text=' + encodeURIComponent(msg);
+    if (animate && !reduce) {
+      result.classList.remove('is-updating');
+      void result.offsetWidth;
+      result.classList.add('is-updating');
+    }
+  }
+  function pick(t) {
+    state.q = +t.dataset.q; state.p = +t.dataset.p;
+    render(true);
+  }
+  teethG.addEventListener('click', function (e) {
+    var t = e.target.closest('.tooth');
+    if (t) pick(t);
+  });
+  teethG.addEventListener('keydown', function (e) {
+    var t = e.target.closest('.tooth');
+    if (t && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); pick(t); }
+  });
+  document.querySelectorAll('input[name="sintoma"]').forEach(function (r) {
+    r.addEventListener('change', function () { state.s = r.value; render(true); });
+  });
+  render(false);
+})();
+</script>
+</body>
+</html>
