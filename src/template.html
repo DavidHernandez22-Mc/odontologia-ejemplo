@@ -1,0 +1,564 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{meta.title}}</title>
+<meta name="description" content="{{meta.description}}">
+<link rel="canonical" href="{{url}}">
+<link rel="alternate" hreflang="es" href="{{urlEs}}">
+<link rel="alternate" hreflang="en" href="{{urlEn}}">
+<link rel="alternate" hreflang="x-default" href="{{urlEs}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{cfg.brand}}">
+<meta property="og:title" content="{{meta.ogTitle}}">
+<meta property="og:description" content="{{meta.ogDescription}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:image" content="{{cfg.siteUrl}}/assets/sonrisa.jpg">
+<meta property="og:image:width" content="1800">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="{{alt.sonrisa}}">
+<meta property="og:locale" content="{{meta.ogLocale}}">
+<meta property="og:locale:alternate" content="{{meta.ogLocaleAlt}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f4a40">
+<script>document.documentElement.classList.add('js')</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="{{base}}assets/img/sonrisa-800.webp" imagesrcset="{{base}}assets/img/sonrisa-800.webp 800w, {{base}}assets/img/sonrisa-lg.webp 1600w" imagesizes="47vw">
+<link rel="stylesheet" href="{{base}}assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#hero">{{meta.skip}}</a>
+
+<main id="contenido">
+<div class="split">
+  <aside class="stage" aria-label="{{stage.label}}">
+    <div class="stage-frame">
+      <div class="stage-drift">
+        [[img:sonrisa|sonrisa|(max-width: 860px) 100vw, 47vw|class="is-on" data-photo="sonrisa" style="object-position:58% 40%" fetchpriority="high"]]
+        [[img:consultorio-ventana|ventana|(max-width: 860px) 100vw, 47vw|data-photo="ventana"]]
+        [[img:alineadores|alineadores|(max-width: 860px) 100vw, 47vw|data-photo="alineadores" style="object-position:45% 50%"]]
+        [[img:radiografias|radiografias|(max-width: 860px) 100vw, 47vw|data-photo="radiografias" style="object-position:62% 50%"]]
+        [[img:espejo|espejo|(max-width: 860px) 100vw, 47vw|data-photo="espejo"]]
+      </div>
+    </div>
+    <p class="stage-caption" aria-live="polite">{{js.captions.sonrisa}}</p>
+  </aside>
+
+  <div class="col" id="inicio">
+    <header class="bar" id="bar">
+      <a class="brand" href="#inicio">{{cfg.brand}}</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">{{nav.menu}}</button>
+      <div class="bar-right">
+        <nav class="links" id="nav-links" aria-label="{{nav.label}}">
+          <a href="#sonrisa">{{nav.smile}}</a>
+          <a href="#implantes">{{nav.implants}}</a>
+          <a href="#precios" class="links-wide">{{nav.prices}}</a>
+          <a href="#internacional" class="links-menu">{{nav.intl}}</a>
+          <a href="#tratamientos" class="links-menu">{{nav.treatments}}</a>
+          <a href="#mapa" class="links-menu">{{nav.map}}</a>
+          <a href="#preguntas" class="links-menu">{{nav.faq}}</a>
+          <a href="#valoracion" class="links-menu">{{nav.contact}}</a>
+        </nav>
+        <p class="lang" aria-label="{{lang.label}}">
+          <a href="{{base}}" hreflang="es" lang="es" data-lang="es"{{lang.esCurrent}}>ES</a>
+          <a href="{{base}}en/" hreflang="en" lang="en" data-lang="en"{{lang.enCurrent}}>EN</a>
+        </p>
+        <a class="btn" href="#valoracion">{{cta.short}} <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </header>
+
+    <section class="hero" id="hero" tabindex="-1" data-photo="sonrisa" aria-labelledby="titulo">
+      <div class="hero-copy">
+        <p class="hero-sentence rv rv--up" style="--i:6">{{hero.sentence}}</p>
+        <div class="hero-meta rv rv--up" style="--i:8">
+          <a class="btn" href="#valoracion">{{cta.first}} <span class="arrow" aria-hidden="true">→</span></a>
+          <p>{{hero.meta}}</p>
+        </div>
+        <p class="hero-intl rv rv--up" style="--i:9"><a class="link" href="#internacional">{{hero.intl}}</a></p>
+      </div>
+      <h1 class="wordmark" id="titulo" aria-label="{{hero.h1}}"><span class="wordmark-inner split-letters">ejemplo</span></h1>
+    </section>
+
+    <section class="intro" data-photo="ventana" aria-label="{{intro.label}}">
+      <div class="intro-col">
+        <p class="rv rv--up">{{intro.p1}}</p>
+        <p class="rv rv--up" style="--i:1">{{intro.p2}}</p>
+        <p class="rv rv--up" style="--i:2">{{intro.p3}}</p>
+        <p class="rv rv--up" style="--i:3">{{intro.p4}}</p>
+        <p class="rv rv--up" style="--i:4">{{intro.p5}}</p>
+      </div>
+    </section>
+
+    <section class="menu-ground" id="tratamientos" data-photo="alineadores" aria-labelledby="t-tratamientos">
+      <div class="rv rv--sheet">
+      <div class="sheet zig" data-zig="both">
+        <h2 class="head" id="t-tratamientos">{{menu.title}}</h2>
+
+        <div class="group">
+          <h3 class="rv rv--up">{{menu.care}}</h3>
+          <div class="row rv rv--row" style="--i:1"><div class="row-line"><span class="row-name">{{menu.valoracion.name}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.valoracion.value}}</span></div><p class="row-desc">{{menu.valoracion.desc}}</p></div>
+          <div class="row rv rv--row" style="--i:2"><div class="row-line"><span class="row-name">{{menu.limpieza.name}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.limpieza.value}}</span></div><p class="row-desc">{{menu.limpieza.desc}}</p></div>
+          <div class="row rv rv--row" style="--i:3"><div class="row-line"><span class="row-name">{{menu.sellantes.name}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.sellantes.value}}</span></div><p class="row-desc">{{menu.sellantes.desc}}</p></div>
+        </div>
+
+        <div class="group">
+          <h3 class="rv rv--up">{{menu.repair}}</h3>
+          <div class="row rv rv--row" style="--i:1"><div class="row-line"><span class="row-name">{{menu.resinas.name}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.resinas.value}}</span></div><p class="row-desc">{{menu.resinas.desc}}</p></div>
+          <div class="row rv rv--row" style="--i:2"><div class="row-line"><span class="row-name">{{menu.endo.name}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.endo.value}}</span></div><p class="row-desc">{{menu.endo.desc}}</p></div>
+          <div class="row rv rv--row" style="--i:3"><div class="row-line"><span class="row-name">{{menu.coronas.name}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.coronas.value}}</span></div><p class="row-desc">{{menu.coronas.desc}}</p></div>
+        </div>
+
+        <div class="group">
+          <h3 class="rv rv--up">{{menu.align}}</h3>
+          <div class="row rv rv--row" style="--i:1"><div class="row-line"><span class="row-name">{{menu.alineadores.name}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.alineadores.value}}</span></div><p class="row-desc">{{menu.alineadores.desc}}</p></div>
+          <div class="row rv rv--row" style="--i:2"><div class="row-line"><span class="row-name">{{menu.brackets.name}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.brackets.value}}</span></div><p class="row-desc">{{menu.brackets.desc}}</p></div>
+        </div>
+
+        <div class="group">
+          <h3 class="rv rv--up">{{menu.replace}}</h3>
+          <div class="row rv rv--row" style="--i:1"><div class="row-line"><span class="row-name"><a class="link" href="#implantes">{{menu.implantes.name}}</a></span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.implantes.value}}</span></div><p class="row-desc">{{menu.implantes.desc}}</p></div>
+          <div class="row rv rv--row" style="--i:2"><div class="row-line"><span class="row-name">{{menu.cordales.name}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.cordales.value}}</span></div><p class="row-desc">{{menu.cordales.desc}}</p></div>
+        </div>
+
+        <div class="group">
+          <h3 class="rv rv--up">{{menu.aesthetic}}</h3>
+          <div class="row rv rv--row" style="--i:1"><div class="row-line"><span class="row-name"><a class="link" href="#sonrisa">{{menu.diseno.name}}</a></span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.diseno.value}}</span></div><p class="row-desc">{{menu.diseno.desc}}</p></div>
+          <div class="row rv rv--row" style="--i:2"><div class="row-line"><span class="row-name">{{menu.blanqueamiento.name}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.blanqueamiento.value}}</span></div><p class="row-desc">{{menu.blanqueamiento.desc}}</p></div>
+          <div class="row rv rv--row" style="--i:3"><div class="row-line"><span class="row-name">{{menu.carillas.name}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">{{menu.carillas.value}}</span></div><p class="row-desc">{{menu.carillas.desc}}</p></div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="visit" id="primera-visita" data-photo="radiografias" aria-labelledby="t-visita">
+      <div class="visit-head">
+        <h2 class="head rv rv--zoom" id="t-visita">{{visit.title}}</h2>
+        <p class="rv rv--up" style="--i:1">{{visit.lead}}</p>
+      </div>
+      <div class="slip-ground">
+        <div class="rv rv--print" style="--i:2">
+        <div class="slip zig" data-zig="bottom">
+          <h3>{{visit.before}}</h3>
+          <div class="row"><div class="row-line"><span class="row-name">{{visit.r1}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">{{visit.r1v}}</span></div></div>
+          <div class="row"><div class="row-line"><span class="row-name">{{visit.r2}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">5 min</span></div><p class="row-desc">{{visit.r2d}}</p></div>
+
+          <h3>{{visit.chair}}</h3>
+          <div class="row"><div class="row-line"><span class="row-name">{{visit.r3}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">10 min</span></div><p class="row-desc">{{visit.r3d}}</p></div>
+          <div class="row"><div class="row-line"><span class="row-name">{{visit.r4}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">10 min</span></div></div>
+          <div class="row"><div class="row-line"><span class="row-name">{{visit.r5}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">20 min</span></div><p class="row-desc">{{visit.r5d}}</p></div>
+          <div class="row"><div class="row-line"><span class="row-name">{{visit.r6}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">15 min</span></div></div>
+
+          <h3>{{visit.after}}</h3>
+          <div class="row"><div class="row-line"><span class="row-name">{{visit.r7}}</span><span class="leader" aria-hidden="true"></span><span class="row-value">5 min</span></div><p class="row-desc">{{visit.r7d}}</p></div>
+
+          <p class="slip-total"><span>{{visit.total}}</span><span>65 min</span></p>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="letter" id="equipo" data-photo="espejo" aria-label="{{letter.label}}">
+      <div class="letter-body">
+        <p class="rv rv--fade">{{letter.p1}}</p>
+        <p class="rv rv--fade" style="--i:2">{{letter.p2}}</p>
+        <p class="rv rv--fade" style="--i:4">{{letter.p3}}</p>
+        <p class="rv rv--fade" style="--i:6">{{letter.p4}}</p>
+        <div class="sign rv rv--up" style="--i:7">
+          <p class="sign-name">Valentina Ospina</p>
+          <p class="sign-role">{{letter.role}}</p>
+        </div>
+      </div>
+      <ul class="team" aria-label="{{letter.team}}">
+        <li class="rv rv--right"><strong>Dra. Valentina Ospina</strong><span>{{letter.t1}}</span></li>
+        <li class="rv rv--right" style="--i:1"><strong>Dr. Andrés Rueda</strong><span>{{letter.t2}}</span></li>
+        <li class="rv rv--right" style="--i:2"><strong>Dra. Laura Méndez</strong><span>{{letter.t3}}</span></li>
+        <li class="rv rv--right" style="--i:3"><strong>Camila Torres</strong><span>{{letter.t4}}</span></li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<section class="smile" id="sonrisa" aria-labelledby="t-sonrisa">
+  <div class="wrap grid12 smile-top">
+    <div class="smile-copy">
+      <h2 class="head rv rv--up" id="t-sonrisa">{{smile.title}}</h2>
+      <p class="smile-lead rv rv--up" style="--i:1">{{smile.lead}}</p>
+      <p class="rv rv--up" style="--i:2">{{smile.body}}</p>
+      <div class="rv rv--up smile-cta" style="--i:3"><a class="btn" href="#valoracion" data-interest="smile">{{smile.cta}} <span class="arrow" aria-hidden="true">→</span></a></div>
+    </div>
+    <div class="smile-photos">
+      <figure class="smile-photo-main rv rv--zoom">
+        [[img:sonrisa-risa|sonrisaRisa|(max-width: 860px) 100vw, 40vw|loading="lazy"]]
+      </figure>
+      <figure class="smile-photo-detail rv rv--up" style="--i:3">
+        [[img:sonrisa-detalle|sonrisaDetalle|(max-width: 860px) 50vw, 18vw|loading="lazy"]]
+      </figure>
+      <p class="photo-note rv rv--up" style="--i:4">{{smile.photoNote}}</p>
+    </div>
+  </div>
+
+  <div class="wrap grid12 smile-includes">
+    <h3 class="sub rv rv--up">{{smile.includesTitle}}</h3>
+    <dl class="includes">
+      <div class="rv rv--row"><dt>{{smile.inc1t}}</dt><dd>{{smile.inc1d}}</dd></div>
+      <div class="rv rv--row" style="--i:1"><dt>{{smile.inc2t}}</dt><dd>{{smile.inc2d}}</dd></div>
+      <div class="rv rv--row" style="--i:2"><dt>{{smile.inc3t}}</dt><dd>{{smile.inc3d}}</dd></div>
+      <div class="rv rv--row" style="--i:3"><dt>{{smile.inc4t}}</dt><dd>{{smile.inc4d}}</dd></div>
+    </dl>
+    <p class="includes-note rv rv--up">{{smile.includesNote}}</p>
+  </div>
+
+  <div class="wrap smile-process">
+    <h3 class="sub rv rv--up">{{smile.processTitle}}</h3>
+    <ol class="phases" aria-label="{{smile.processTitle}}">
+      <li class="phase rv rv--up"><span class="phase-bar" aria-hidden="true"></span><p class="phase-name">{{smile.ph1t}}</p><p>{{smile.ph1d}}</p></li>
+      <li class="phase rv rv--up" style="--i:1"><span class="phase-bar" aria-hidden="true"></span><p class="phase-name">{{smile.ph2t}}</p><p>{{smile.ph2d}}</p></li>
+      <li class="phase rv rv--up" style="--i:2"><span class="phase-bar" aria-hidden="true"></span><p class="phase-name">{{smile.ph3t}}</p><p>{{smile.ph3d}}</p></li>
+      <li class="phase rv rv--up" style="--i:3"><span class="phase-bar" aria-hidden="true"></span><p class="phase-name">{{smile.ph4t}}</p><p>{{smile.ph4d}}</p></li>
+    </ol>
+  </div>
+
+  <div class="wrap grid12 smile-aims">
+    <div class="aims-head">
+      <h3 class="sub rv rv--up">{{smile.aimsTitle}}</h3>
+    </div>
+    <ul class="aims">
+      <li class="rv rv--up"><b>{{smile.aim1t}}</b> {{smile.aim1d}}</li>
+      <li class="rv rv--up" style="--i:1"><b>{{smile.aim2t}}</b> {{smile.aim2d}}</li>
+      <li class="rv rv--up" style="--i:2"><b>{{smile.aim3t}}</b> {{smile.aim3d}}</li>
+      <li class="rv rv--up" style="--i:3"><b>{{smile.aim4t}}</b> {{smile.aim4d}}</li>
+    </ul>
+    <p class="aims-note rv rv--up">{{smile.honest}}</p>
+  </div>
+</section>
+
+<section class="implants" id="implantes" aria-labelledby="t-implantes">
+  <div class="wrap grid12">
+    <figure class="impl-photo rv rv--zoom">
+      [[img:implante-mano|implanteMano|(max-width: 860px) 100vw, 38vw|loading="lazy"]]
+    </figure>
+    <div class="impl-copy">
+      <h2 class="head rv rv--up" id="t-implantes">{{impl.title}}</h2>
+      <p class="smile-lead rv rv--up" style="--i:1">{{impl.lead}}</p>
+      <p class="rv rv--up" style="--i:2">{{impl.body}}</p>
+
+      <ol class="impl-steps">
+        <li class="rv rv--row"><p class="impl-step-name">{{impl.s1t}}</p><p>{{impl.s1d}}</p></li>
+        <li class="rv rv--row" style="--i:1"><p class="impl-step-name">{{impl.s2t}}</p><p>{{impl.s2d}}</p></li>
+        <li class="rv rv--row" style="--i:2"><p class="impl-step-name">{{impl.s3t}}</p><p>{{impl.s3d}}</p></li>
+        <li class="rv rv--row" style="--i:3"><p class="impl-step-name">{{impl.s4t}}</p><p>{{impl.s4d}}</p></li>
+        <li class="rv rv--row" style="--i:4"><p class="impl-step-name">{{impl.s5t}}</p><p>{{impl.s5d}}</p></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="wrap grid12 impl-detail">
+    <div class="impl-time rv rv--up">
+      <h3 class="sub">{{impl.timeTitle}}</h3>
+      <p>{{impl.timeBody}}</p>
+    </div>
+    <div class="impl-factors rv rv--up" style="--i:1">
+      <h3 class="sub">{{impl.factorsTitle}}</h3>
+      <ul>
+        <li>{{impl.f1}}</li>
+        <li>{{impl.f2}}</li>
+        <li>{{impl.f3}}</li>
+        <li>{{impl.f4}}</li>
+        <li>{{impl.f5}}</li>
+      </ul>
+    </div>
+    <figure class="impl-model rv rv--zoom" style="--i:2">
+      [[img:implante-modelo|implanteModelo|(max-width: 860px) 100vw, 30vw|loading="lazy"]]
+    </figure>
+  </div>
+
+  <div class="wrap grid12 impl-benefits">
+    <h3 class="sub rv rv--up">{{impl.benefitsTitle}}</h3>
+    <ul class="aims">
+      <li class="rv rv--up"><b>{{impl.b1t}}</b> {{impl.b1d}}</li>
+      <li class="rv rv--up" style="--i:1"><b>{{impl.b2t}}</b> {{impl.b2d}}</li>
+      <li class="rv rv--up" style="--i:2"><b>{{impl.b3t}}</b> {{impl.b3d}}</li>
+      <li class="rv rv--up" style="--i:3"><b>{{impl.b4t}}</b> {{impl.b4d}}</li>
+    </ul>
+    <div class="impl-cta rv rv--up">
+      <p>{{impl.honest}}</p>
+      <a class="btn" href="#valoracion" data-interest="implants">{{impl.cta}} <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="map" id="mapa" aria-labelledby="t-mapa">
+  <div class="wrap grid12">
+    <div class="map-intro">
+      <h2 class="head rv rv--up" id="t-mapa">{{map.title}}</h2>
+      <p class="rv rv--up" style="--i:1">{{map.lead}}</p>
+    </div>
+    <div class="map-chart">
+      <div class="chart rv" id="chart">
+        <svg id="mouth" viewBox="0 0 400 540" role="group" aria-label="{{map.svgLabel}}">
+          <g id="gums"></g>
+          <text class="zone zone--big" x="200" y="178" text-anchor="middle">{{map.up}}</text>
+          <text class="zone zone--big" x="200" y="372" text-anchor="middle">{{map.down}}</text>
+          <text class="zone" x="0" y="276">{{map.left}}</text>
+          <text class="zone" x="400" y="276" text-anchor="end">{{map.right}}</text>
+          <g id="teeth"></g>
+        </svg>
+        <p class="chart-note">{{map.note}}</p>
+        <noscript><p class="chart-note">{{map.noscript}}</p></noscript>
+      </div>
+    </div>
+    <div class="map-side">
+      <fieldset class="symptoms rv rv--up" style="--i:2">
+        <legend>{{map.feel}}</legend>
+        <div class="chips">
+          <label class="chip"><input type="radio" name="sintoma" value="frio" checked><span>{{map.sFrio}}</span></label>
+          <label class="chip"><input type="radio" name="sintoma" value="morder"><span>{{map.sMorder}}</span></label>
+          <label class="chip"><input type="radio" name="sintoma" value="roto"><span>{{map.sRoto}}</span></label>
+          <label class="chip"><input type="radio" name="sintoma" value="falta"><span>{{map.sFalta}}</span></label>
+          <label class="chip"><input type="radio" name="sintoma" value="estetica"><span>{{map.sEstetica}}</span></label>
+          <label class="chip"><input type="radio" name="sintoma" value="revision"><span>{{map.sRevision}}</span></label>
+        </div>
+      </fieldset>
+
+      <div class="result rv rv--up" style="--i:3" id="result" aria-live="polite">
+        <p class="result-tooth" id="r-tooth">&nbsp;</p>
+        <p class="result-what" id="r-what">&nbsp;</p>
+        <dl class="result-facts">
+          <div><dt>{{map.time}}</dt><dd id="r-time">&nbsp;</dd></div>
+          <div><dt>{{map.from}}</dt><dd id="r-price">&nbsp;</dd></div>
+        </dl>
+        <p class="result-note" id="r-note">&nbsp;</p>
+        <div><a class="btn btn--light" id="r-cta" href="[[wa:wa.general]]">{{map.cta}} <span class="arrow" aria-hidden="true">→</span></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="prices" id="precios" aria-labelledby="t-precios">
+  <div class="wrap grid12">
+    <div class="prices-side">
+      <h2 class="head rv rv--up" id="t-precios">{{prices.title}}</h2>
+      <figure class="rv rv--zoom" style="--i:1">
+        [[img:consultorio-ventana|ventana|(max-width: 1100px) 50vw, 22vw|loading="lazy"]]
+      </figure>
+      <p class="prices-side-cap rv rv--up" style="--i:2">{{prices.side}}</p>
+    </div>
+    <div class="prices-list">
+      <div class="pgroup rv rv--up">
+        <h3>{{menu.care}}</h3>
+        <div class="price"><div class="price-line"><span>{{prices.valoracion}}</span>[[cop:valoracion]]</div><p>{{prices.valoracionD}}</p></div>
+        <div class="price"><div class="price-line"><span>{{prices.limpieza}}</span>[[cop:limpieza]]</div><p>{{prices.limpiezaD}}</p></div>
+        <div class="price"><div class="price-line"><span>{{prices.sellantes}}</span>[[cop:sellantes]]</div><p>{{prices.sellantesD}}</p></div>
+      </div>
+      <div class="pgroup rv rv--up">
+        <h3>{{menu.repair}}</h3>
+        <div class="price"><div class="price-line"><span>{{prices.resina}}</span>[[cop:resina]]</div><p>{{prices.resinaD}}</p></div>
+        <div class="price"><div class="price-line"><span>{{prices.endoUni}}</span>[[cop:endoUni]]</div><p>{{prices.endoUniD}}</p></div>
+        <div class="price"><div class="price-line"><span>{{prices.endoMolar}}</span>[[cop:endoMolar]]</div><p>{{prices.endoMolarD}}</p></div>
+        <div class="price"><div class="price-line"><span>{{prices.incrustacion}}</span>[[cop:incrustacion]]</div><p>{{prices.incrustacionD}}</p></div>
+        <div class="price"><div class="price-line"><span>{{prices.corona}}</span>[[cop:corona]]</div><p>{{prices.coronaD}}</p></div>
+      </div>
+      <div class="pgroup rv rv--up">
+        <h3>{{menu.align}}</h3>
+        <div class="price"><div class="price-line"><span>{{prices.alineadores}}</span>[[cop:alineadores]]</div><p>{{prices.alineadoresD}}</p></div>
+        <div class="price"><div class="price-line"><span>{{prices.brackets}}</span>[[cop:brackets]]</div><p>{{prices.bracketsD}}</p></div>
+        <div class="price"><div class="price-line"><span>{{prices.retenedores}}</span>[[cop:retenedores]]</div><p>{{prices.retenedoresD}}</p></div>
+      </div>
+      <div class="pgroup rv rv--up">
+        <h3>{{menu.replace}}</h3>
+        <div class="price"><div class="price-line"><span>{{prices.implante}}</span>[[cop:implante]]</div><p>{{prices.implanteD}}</p></div>
+        <div class="price"><div class="price-line"><span>{{prices.injerto}}</span>[[cop:injerto]]</div><p>{{prices.injertoD}}</p></div>
+        <div class="price"><div class="price-line"><span>{{prices.cordal}}</span>[[cop:cordal]]</div><p>{{prices.cordalD}}</p></div>
+      </div>
+      <div class="pgroup rv rv--up">
+        <h3>{{menu.aesthetic}}</h3>
+        <div class="price"><div class="price-line"><span>{{prices.blanqueamiento}}</span>[[cop:blanqueamiento]]</div><p>{{prices.blanqueamientoD}}</p></div>
+        <div class="price"><div class="price-line"><span>{{prices.carilla}}</span>[[cop:carilla]]</div><p>{{prices.carillaD}}</p></div>
+      </div>
+    </div>
+    <p class="prices-foot rv rv--up">{{prices.foot}}</p>
+  </div>
+</section>
+
+<section class="intl" id="internacional" aria-labelledby="t-intl">
+  <div class="wrap grid12">
+    <div class="intl-head">
+      <h2 class="head rv rv--up" id="t-intl">{{intl.title}}</h2>
+      <p class="smile-lead rv rv--up" style="--i:1">{{intl.lead}}</p>
+    </div>
+    <ol class="intl-steps">
+      <li class="rv rv--up"><p class="impl-step-name">{{intl.s1t}}</p><p>{{intl.s1d}}</p></li>
+      <li class="rv rv--up" style="--i:1"><p class="impl-step-name">{{intl.s2t}}</p><p>{{intl.s2d}}</p></li>
+      <li class="rv rv--up" style="--i:2"><p class="impl-step-name">{{intl.s3t}}</p><p>{{intl.s3d}}</p></li>
+      <li class="rv rv--up" style="--i:3"><p class="impl-step-name">{{intl.s4t}}</p><p>{{intl.s4d}}</p></li>
+    </ol>
+  </div>
+
+  <div class="wrap grid12 usd">
+    <div class="usd-head">
+      <h3 class="sub rv rv--up">{{intl.priceTitle}}</h3>
+      <p class="rv rv--up" style="--i:1">{{intl.priceLead}}</p>
+    </div>
+    <div class="usd-table rv rv--up" style="--i:2">
+      <table>
+        <caption class="sr-only">{{intl.priceTitle}}</caption>
+        <thead>
+          <tr><th scope="col">{{intl.colTreatment}}</th><th scope="col">{{intl.colUnit}}</th><th scope="col" class="num">{{intl.colPrice}}</th></tr>
+        </thead>
+        <tbody>
+          [[usdRows]]
+        </tbody>
+      </table>
+      <p class="usd-note">{{intl.priceNote}}</p>
+      <a class="btn btn--light" href="#valoracion" data-interest="intl">{{intl.cta}} <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="voices" id="testimonios" aria-labelledby="t-voices">
+  <div class="wrap grid12">
+    <div class="voices-head">
+      <h2 class="head rv rv--up" id="t-voices">{{voices.title}}</h2>
+      <p class="rv rv--up" style="--i:1">{{voices.lead}}</p>
+    </div>
+    <div class="voices-list">
+      [[testimonials]]
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="preguntas" aria-labelledby="t-preguntas">
+  <div class="wrap grid12">
+    <h2 class="head faq-head rv rv--zoom" id="t-preguntas">{{faq.title}}</h2>
+    <div class="faq-text">
+      <p class="rv rv--up"><b>{{faq.q1}}</b> {{faq.a1}}</p>
+      <p class="rv rv--up" style="--i:1"><b>{{faq.q2}}</b> {{faq.a2}}</p>
+      <p class="rv rv--up" style="--i:2"><b>{{faq.q3}}</b> {{faq.a3}}</p>
+      <p class="rv rv--up" style="--i:3"><b>{{faq.q4}}</b> {{faq.a4}}</p>
+      <p class="rv rv--up" style="--i:4"><b>{{faq.q5}}</b> {{faq.a5}}</p>
+      <p class="rv rv--up" style="--i:5"><b>{{faq.q6}}</b> {{faq.a6}}</p>
+      <p class="rv rv--up" style="--i:6"><b>{{faq.q7}}</b> {{faq.a7}}</p>
+      <p class="rv rv--up" style="--i:7"><b>{{faq.q8}}</b> {{faq.a8}}</p>
+      <p class="rv rv--up" style="--i:8"><b>{{faq.q9}}</b> {{faq.a9}}</p>
+      <p class="rv rv--up" style="--i:9"><b>{{faq.q10}}</b> {{faq.a10}}</p>
+      <p class="rv rv--up" style="--i:10"><b>{{faq.q11}}</b> {{faq.a11}}</p>
+      <p class="rv rv--up" style="--i:11"><b>{{faq.q12}}</b> {{faq.a12}}</p>
+      <p class="rv rv--up" style="--i:12"><b>{{faq.q13}}</b> {{faq.a13}}</p>
+      <p class="rv rv--up" style="--i:13"><b>{{faq.q14}}</b> {{faq.a14}}</p>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="valoracion" aria-labelledby="t-book">
+  <div class="wrap grid12">
+    <div class="book-head">
+      <h2 class="head rv rv--up" id="t-book">{{form.title}}</h2>
+      <p class="smile-lead rv rv--up" style="--i:1">{{form.lead}}</p>
+      <p class="rv rv--up" style="--i:2">{{form.aside}}</p>
+    </div>
+    <form class="book-form rv rv--up" id="book-form" novalidate style="--i:1">
+      <div class="field">
+        <label for="f-name">{{form.name}}</label>
+        <input id="f-name" name="name" type="text" autocomplete="name" required maxlength="80" aria-describedby="e-name">
+        <p class="field-error" id="e-name" aria-live="polite"></p>
+      </div>
+      <div class="field">
+        <label for="f-contact">{{form.contact}}</label>
+        <input id="f-contact" name="contact" type="text" autocomplete="tel" required maxlength="80" aria-describedby="h-contact e-contact">
+        <p class="field-hint" id="h-contact">{{form.contactHint}}</p>
+        <p class="field-error" id="e-contact" aria-live="polite"></p>
+      </div>
+      <div class="field">
+        <label for="f-country">{{form.country}}</label>
+        <input id="f-country" name="country" type="text" autocomplete="country-name" required maxlength="60" aria-describedby="e-country">
+        <p class="field-error" id="e-country" aria-live="polite"></p>
+      </div>
+      <div class="field">
+        <label for="f-interest">{{form.interest}}</label>
+        <select id="f-interest" name="interest">
+          <option value="general">{{form.iGeneral}}</option>
+          <option value="smile">{{form.iSmile}}</option>
+          <option value="implants">{{form.iImplants}}</option>
+          <option value="whitening">{{form.iWhitening}}</option>
+          <option value="aligners">{{form.iAligners}}</option>
+          <option value="intl">{{form.iIntl}}</option>
+          <option value="unsure">{{form.iUnsure}}</option>
+        </select>
+      </div>
+      <fieldset class="field field--radios">
+        <legend>{{form.language}}</legend>
+        <label><input type="radio" name="language" value="es"{{form.esChecked}}> Español</label>
+        <label><input type="radio" name="language" value="en"{{form.enChecked}}> English</label>
+      </fieldset>
+      <div class="field">
+        <label for="f-dates">{{form.dates}}</label>
+        <input id="f-dates" name="dates" type="text" maxlength="80" aria-describedby="h-dates">
+        <p class="field-hint" id="h-dates">{{form.datesHint}}</p>
+      </div>
+      <div class="field field--wide">
+        <label for="f-message">{{form.message}}</label>
+        <textarea id="f-message" name="message" rows="4" maxlength="500" aria-describedby="h-message"></textarea>
+        <p class="field-hint" id="h-message">{{form.messageHint}}</p>
+      </div>
+      <div class="field field--wide field--check">
+        <label><input type="checkbox" name="consent" id="f-consent" required aria-describedby="e-consent"> <span>{{form.consent}}</span></label>
+        <p class="field-error" id="e-consent" aria-live="polite"></p>
+      </div>
+      <div class="field--wide form-actions">
+        <button class="btn" type="submit" id="f-submit"><span class="btn-label">{{form.submit}}</span> <span class="arrow" aria-hidden="true">→</span></button>
+        <p class="field-hint">{{form.submitHint}}</p>
+      </div>
+      <div class="form-done field--wide" id="form-done" tabindex="-1" hidden>
+        <p class="form-done-title">{{form.doneTitle}}</p>
+        <p>{{form.doneBody}}</p>
+        <p class="form-done-actions"><a class="btn" id="form-wa" href="[[wa:wa.general]]" target="_blank" rel="noopener">{{form.doneOpen}} <span class="arrow" aria-hidden="true">→</span></a> <button class="link-button" type="button" id="form-again">{{form.again}}</button></p>
+      </div>
+      <noscript><p class="field--wide field-hint">{{form.noscript}}</p></noscript>
+    </form>
+  </div>
+</section>
+
+<section class="contact" id="contacto" aria-label="{{contact.label}}">
+  <p class="crow rv rv--left">{{cfg.brand}}</p>
+  <p class="crow rv rv--right"><a href="{{cfg.contact.mapsUrl}}" rel="noopener">{{cfg.contact.street}} <span class="go" aria-hidden="true">↗</span></a></p>
+  <p class="crow rv rv--left">{{cfg.contact.area}}</p>
+  <p class="crow rv rv--right">{{contact.hours}}</p>
+  <p class="crow rv rv--left"><a href="tel:{{cfg.contact.phoneHref}}">{{cfg.contact.phoneDisplay}}</a></p>
+  <p class="crow crow--cta rv rv--right"><a href="[[wa:wa.general]]" rel="noopener">{{contact.write}} <span class="square-go" aria-hidden="true">→</span></a></p>
+</section>
+</main>
+
+<footer class="foot">
+  [[img:consultorio-madera|empty|100vw|class="foot-photo" loading="lazy"]]
+  <div class="foot-top">
+    <ul>
+      <li><a href="#sonrisa">{{nav.smileLong}}</a></li>
+      <li><a href="#implantes">{{nav.implants}}</a></li>
+      <li><a href="#tratamientos">{{nav.treatments}}</a></li>
+      <li><a href="#primera-visita">{{nav.visit}}</a></li>
+      <li><a href="#mapa">{{nav.map}}</a></li>
+      <li><a href="#internacional">{{nav.intl}}</a></li>
+      <li><a href="#preguntas">{{nav.faq}}</a></li>
+    </ul>
+    <ul class="foot-contact">
+      <li>{{cfg.contact.street}}</li>
+      <li>{{cfg.contact.area}}</li>
+      <li><a href="tel:{{cfg.contact.phoneHref}}">{{cfg.contact.phoneDisplay}}</a></li>
+      <li><a href="mailto:{{cfg.contact.email}}">{{cfg.contact.email}}</a></li>
+      <li><a href="{{altUrl}}" hreflang="{{altLang}}" lang="{{altLang}}" data-lang="{{altLang}}">{{lang.switchTo}}</a></li>
+    </ul>
+  </div>
+  <div class="foot-bottom">
+    <p class="wordmark split-letters" aria-hidden="true">ejemplo</p>
+    <p class="legal">{{foot.legal}}</p>
+    <p class="legal">{{foot.photos}} <a href="https://unsplash.com/photos/1AhGNGKuhR0">@jblesly</a>, <a href="https://unsplash.com/photos/44jaETSVX2I">@katasha</a>, <a href="https://unsplash.com/photos/v_2FRXEba94">@jonathanborba</a>, <a href="https://unsplash.com/photos/WFsNCIn8OF4">@candid</a>, <a href="https://unsplash.com/photos/Fdku_oMrDvk">@karibjorn</a>, <a href="https://unsplash.com/photos/ux18C551ghI">@carocaro1987</a>, <a href="https://unsplash.com/photos/DDO0Cv4U9Gs">@streetog</a>, <a href="https://unsplash.com/photos/glPVwPr1FKo">@justatony</a>, <a href="https://unsplash.com/photos/eHwRLpfHSKY">@katasha</a>, <a href="https://unsplash.com/photos/IFL9Hj6os0U">@harold_angus</a>.</p>
+  </div>
+</footer>
+
+<script id="page-data" type="application/json">[[pageData]]</script>
+<script src="{{base}}assets/js/site.js" defer></script>
+</body>
+</html>

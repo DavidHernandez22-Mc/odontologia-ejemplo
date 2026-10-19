@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://davidhernandez22-mc.github.io/odontologia-ejemplo/sitemap.xml

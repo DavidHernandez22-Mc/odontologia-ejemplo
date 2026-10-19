@@ -1,0 +1,537 @@
+{
+  "meta": {
+    "title": "Odontología Ejemplo · Smile design & dental implants in Bogotá, Colombia",
+    "description": "Cosmetic dentistry in Chicó, Bogotá. Smile design, porcelain veneers, dental implants and clear aligners, with one-hour appointments and a written quote before treatment starts.",
+    "ogTitle": "Odontología Ejemplo · Cosmetic dentistry in Bogotá, Colombia",
+    "ogDescription": "Unhurried smile design and dental implants in Bogotá. A written treatment plan and price before you commit.",
+    "ogLocale": "en_US",
+    "ogLocaleAlt": "es_CO",
+    "skip": "Skip to content"
+  },
+  "stage": {
+    "label": "Photographs"
+  },
+  "alt": {
+    "sonrisa": "Woman smiling, showing healthy white teeth.",
+    "ventana": "White dental chair next to a window with natural light.",
+    "alineadores": "Hands holding clear dental aligners and their case.",
+    "radiografias": "Dentist reviewing dental X-rays on a light panel.",
+    "espejo": "Dental mirror and explorer on a white surface.",
+    "sonrisaRisa": "Woman with curly hair laughing with a wide smile.",
+    "sonrisaDetalle": "Close-up of a smile with white, even teeth.",
+    "implanteMano": "Gloved hand holding a dental implant with its crown.",
+    "implanteModelo": "Teaching model of a dental implant next to natural teeth.",
+    "empty": ""
+  },
+  "nav": {
+    "menu": "Menu",
+    "label": "Main",
+    "smile": "Smiles",
+    "smileLong": "Smile design",
+    "implants": "Implants",
+    "prices": "Prices",
+    "intl": "International patients",
+    "treatments": "Treatments",
+    "visit": "Your first visit",
+    "map": "Where does it hurt?",
+    "faq": "Questions",
+    "contact": "Request an assessment"
+  },
+  "lang": {
+    "label": "Language",
+    "esCurrent": "",
+    "enCurrent": " aria-current=\"true\"",
+    "switchTo": "Ver esta página en español"
+  },
+  "cta": {
+    "short": "Book a visit",
+    "first": "Book your first visit"
+  },
+  "hero": {
+    "h1": "Odontología Ejemplo, cosmetic dentistry in Bogotá",
+    "sentence": "Gentle, unhurried cosmetic dentistry in Chicó, Bogotá.",
+    "meta": "Full assessment: 65 minutes, [[copText:valoracion]].",
+    "intl": "Traveling from abroad? Here is how we plan your visit"
+  },
+  "intro": {
+    "label": "How we work",
+    "p1": "We are a small practice in Chicó: four specialists, three treatment rooms with natural light, and one rule — nobody is in a hurry.",
+    "p2": "Every appointment lasts a full hour. Nobody walks in while you are in the chair, and there is never someone waiting for your slot.",
+    "p3": "We use computer-controlled anesthesia, which goes in slowly and is barely noticeable. Raise your hand and we stop. Always.",
+    "p4": "Before we touch a tooth, you get a fixed, written quote. What you sign is what you pay.",
+    "p5": "If it has been years since you saw a dentist, start here: <a class=\"link\" href=\"#primera-visita\">what your first visit looks like</a>."
+  },
+  "menu": {
+    "title": "What we do",
+    "care": "Prevent",
+    "repair": "Repair",
+    "align": "Align",
+    "replace": "Replace",
+    "aesthetic": "Cosmetic",
+    "valoracion": {
+      "name": "Full assessment",
+      "value": "65 min",
+      "desc": "Exam, photos, panoramic X-ray and a written plan."
+    },
+    "limpieza": {
+      "name": "Deep cleaning",
+      "value": "45 min",
+      "desc": "Gentle ultrasonic cleaning and polish, no aggressive scraping."
+    },
+    "sellantes": {
+      "name": "Sealants for children",
+      "value": "20 min",
+      "desc": "Protect new molars from decay, no anesthesia needed."
+    },
+    "resinas": {
+      "name": "Tooth-colored fillings",
+      "value": "45 min",
+      "desc": "Invisible fillings, also to replace old metal ones."
+    },
+    "endo": {
+      "name": "Root canal",
+      "value": "2 visits",
+      "desc": "Done under a microscope, with slow, gentle anesthesia."
+    },
+    "coronas": {
+      "name": "Porcelain crowns",
+      "value": "2 visits",
+      "desc": "Tried in your mouth before they are bonded."
+    },
+    "alineadores": {
+      "name": "Clear aligners",
+      "value": "12–18 months",
+      "desc": "See a simulation of your final smile before you decide."
+    },
+    "brackets": {
+      "name": "Ceramic braces",
+      "value": "18–24 months",
+      "desc": "Tooth-colored ceramic brackets."
+    },
+    "implantes": {
+      "name": "Implants",
+      "value": "3–6 months",
+      "desc": "Computer-guided surgery and a porcelain crown."
+    },
+    "cordales": {
+      "name": "Wisdom tooth removal",
+      "value": "45 min",
+      "desc": "With conscious sedation if you prefer."
+    },
+    "diseno": {
+      "name": "Smile design",
+      "value": "Custom plan",
+      "desc": "Veneers, whitening and bonding, combined for your case."
+    },
+    "blanqueamiento": {
+      "name": "Whitening",
+      "value": "90 min",
+      "desc": "In-office, with protection for sensitive gums."
+    },
+    "carillas": {
+      "name": "Porcelain veneers",
+      "value": "2 visits",
+      "desc": "We show you the result in your mouth, in wax, before we start."
+    }
+  },
+  "visit": {
+    "title": "Your first visit",
+    "lead": "Sixty-five minutes, no white coat and no surprises. Here is what happens, start to finish.",
+    "before": "Before you arrive",
+    "r1": "We confirm by WhatsApp",
+    "r1v": "1 day before",
+    "r2": "You fill in your health history",
+    "r2d": "From your phone, at home, in your own time.",
+    "chair": "In the chair",
+    "r3": "We talk about what worries you",
+    "r3d": "Face to face, with no instruments in sight.",
+    "r4": "Photos and panoramic X-ray",
+    "r5": "You see your mouth on screen",
+    "r5d": "We walk you through each tooth using your own photos.",
+    "r6": "A gentle cleaning, if you want one",
+    "after": "Before you leave",
+    "r7": "A plan with prices and dates",
+    "r7d": "In writing, so you can think it over at home.",
+    "total": "You leave with a plan and a fixed price"
+  },
+  "letter": {
+    "label": "A letter from our founder, and the team",
+    "p1": "I opened Odontología Ejemplo in 2019, after twelve years in clinics where every patient got twenty minutes. Twenty minutes is not enough to explain anything — least of all to someone who walks in afraid.",
+    "p2": "Here, every appointment lasts an hour. I explain what I see before I do anything, and you watch what I do on the screen. If anything feels uncomfortable, <mark>raise your hand and we stop</mark>.",
+    "p3": "There are four of us. Andrés does root canals under the microscope, Laura leads orthodontics, Camila is the hygienist you will see twice a year, and I handle restorative work and implants.",
+    "p4": "We don't do promotions or package deals. We have one price per treatment, in writing, and all the time it takes.",
+    "role": "Dentist, restorative dentistry. Founder of Odontología Ejemplo.",
+    "team": "Team",
+    "t1": "Restorative dentistry and implants",
+    "t2": "Microscope-assisted root canals",
+    "t3": "Orthodontics and aligners",
+    "t4": "Dental hygiene and prevention"
+  },
+  "smile": {
+    "title": "Smile design",
+    "lead": "A smile planned around your face, your proportions and the way you laugh. You try it on before you decide.",
+    "body": "We don't start from a catalog of perfect teeth. We study your photos, your bite and what you would like to change, then combine only the treatments your case actually needs. The goal is for you to look like yourself, with teeth that look healthy and natural.",
+    "cta": "Request a smile assessment",
+    "photoNote": "Reference photographs, not patients of the clinic.",
+    "includesTitle": "What it can include",
+    "inc1t": "Porcelain veneers",
+    "inc1d": "Thin shells that change the shape, size or color of your front teeth. Before we make them, we show them to you in wax.",
+    "inc2t": "In-office whitening",
+    "inc2d": "Lightens the shade of your own teeth. It is often the first step, and sometimes the only one.",
+    "inc3t": "Cosmetic bonding",
+    "inc3d": "Fixes chipped edges, small gaps or dark fillings in a single visit.",
+    "inc4t": "Clear aligners",
+    "inc4d": "If your teeth need to move, aligning them first can spare them from being reshaped later.",
+    "includesNote": "Each plan combines only what your case needs. It might be a whitening session, or treatment in several stages.",
+    "processTitle": "How we work",
+    "ph1t": "Assessment",
+    "ph1d": "Photos, X-rays and a conversation about what you would like to change — and what you wouldn't.",
+    "ph2t": "Design and trial",
+    "ph2d": "We design your new smile and try it in your mouth, in wax, so you can see it before we touch a tooth.",
+    "ph3t": "Treatment",
+    "ph3d": "In stages and in one-hour appointments, with the plan and price in writing from day one.",
+    "ph4t": "Follow-up",
+    "ph4d": "Check-ups to see how your mouth adapts and how to care for the result at home.",
+    "aimsTitle": "What we aim for",
+    "aim1t": "Proportion.",
+    "aim1d": "Teeth that suit your face, your lips and the way you smile.",
+    "aim2t": "Natural color.",
+    "aim2d": "A white that looks healthy, not one you notice from across the room.",
+    "aim3t": "Keeping your teeth.",
+    "aim3d": "When the result allows it, we choose the option that removes the least tooth structure.",
+    "aim4t": "Informed decisions.",
+    "aim4d": "You see the proposal, you know the price, and you decide without pressure.",
+    "honest": "Every mouth is different and results vary from case to case. At your assessment we will tell you honestly what is possible and what isn't."
+  },
+  "impl": {
+    "title": "Dental implants",
+    "lead": "A titanium root that replaces a missing tooth and supports a porcelain crown.",
+    "body": "The implant is placed in the bone during a short, planned procedure. Once the bone has bonded with it, a crown made to fit your mouth is attached on top. The neighboring teeth don't need to be reshaped.",
+    "s1t": "Assessment",
+    "s1d": "We review your general health, your gums and the bone in the area with X-rays, and tell you whether an implant is a good option for you.",
+    "s2t": "Planning",
+    "s2d": "We plan the implant position on a computer before surgery, and give you the plan and price in writing.",
+    "s3t": "Placement",
+    "s3d": "Under local anesthesia, in one appointment. Most patients return to their routine the next day, with clear instructions for the first few days.",
+    "s4t": "Restoration",
+    "s4d": "Once the implant is stable, we take impressions and place your final porcelain crown.",
+    "s5t": "Check-ups",
+    "s5d": "Regular reviews and professional cleanings to look after the implant and the gum around it.",
+    "timeTitle": "Typical timeline",
+    "timeBody": "As a guide, the final crown is usually placed 3 to 6 months after the implant — the time the bone needs to integrate it. Your plan will give you your own timeline, which may be longer if you need a bone graft.",
+    "factorsTitle": "What can change the plan",
+    "f1": "The amount and quality of bone in the area.",
+    "f2": "The health of your gums.",
+    "f3": "Whether you smoke.",
+    "f4": "Conditions such as uncontrolled diabetes.",
+    "f5": "How many teeth need replacing.",
+    "benefitsTitle": "What an implant can give you",
+    "b1t": "Confident chewing.",
+    "b1d": "The crown rests on bone, not on the gum.",
+    "b2t": "Untouched neighbors.",
+    "b2d": "Unlike a bridge, the teeth on either side don't need to be filed down.",
+    "b3t": "Helps preserve bone.",
+    "b3d": "The implant stimulates the bone in the area, which tends to shrink when a tooth is missing.",
+    "b4t": "Looks like a tooth.",
+    "b4d": "The crown is made to match the color and shape of your teeth.",
+    "honest": "Like any treatment, an implant needs good home care and regular check-ups. How long it lasts depends on that care and on your general health.",
+    "cta": "Request an implant consultation"
+  },
+  "map": {
+    "title": "Where does it hurt?",
+    "lead": "You don't need to know which tooth it is. Tap the area that bothers you, tell us what you feel, and we'll show you what it usually needs, how long it takes and what it costs.",
+    "svgLabel": "Map of the mouth, shown as in a mirror",
+    "up": "Upper",
+    "down": "Lower",
+    "left": "Left",
+    "right": "Right",
+    "note": "As you see yourself in the mirror. The back molars count too.",
+    "noscript": "The map needs JavaScript. You can tell us where it hurts on WhatsApp.",
+    "feel": "What do you feel?",
+    "sFrio": "It hurts with cold or sweets",
+    "sMorder": "It hurts when I bite, or for no reason",
+    "sRoto": "It's broken or chipped",
+    "sFalta": "It's loose or missing",
+    "sEstetica": "I'd like it to look better",
+    "sRevision": "I just want a check-up",
+    "time": "Time",
+    "from": "From",
+    "cta": "Book a visit for this area"
+  },
+  "prices": {
+    "title": "Prices",
+    "side": "No hidden costs: what you see here is what you pay.",
+    "valoracion": "Assessment with X-ray",
+    "valoracionD": "Includes photos, panoramic X-ray and a written plan.",
+    "limpieza": "Deep cleaning",
+    "limpiezaD": "Ultrasonic cleaning, polish and fluoride.",
+    "sellantes": "Sealants, per tooth",
+    "sellantesD": "For children from age 6.",
+    "resina": "Filling, per surface",
+    "resinaD": "Matched to your tooth color.",
+    "endoUni": "Root canal, single canal",
+    "endoUniD": "Front teeth, canines and premolars.",
+    "endoMolar": "Root canal, molar",
+    "endoMolarD": "Under a microscope, in two visits.",
+    "incrustacion": "Porcelain inlay",
+    "incrustacionD": "When a filling is too large to redo.",
+    "corona": "Porcelain crown",
+    "coronaD": "Temporary crown included.",
+    "alineadores": "Clear aligners",
+    "alineadoresD": "Full treatment, retainers included.",
+    "brackets": "Ceramic braces",
+    "bracketsD": "Full treatment, check-ups included.",
+    "retenedores": "New retainers",
+    "retenedoresD": "Upper and lower.",
+    "implante": "Implant with crown",
+    "implanteD": "Guided surgery, porcelain crown and check-ups.",
+    "injerto": "Bone graft",
+    "injertoD": "Only if your assessment shows it's needed.",
+    "cordal": "Wisdom tooth removal",
+    "cordalD": "Per tooth, with a one-week check-up.",
+    "blanqueamiento": "Whitening",
+    "blanqueamientoD": "In-office, with trays for touch-ups at home.",
+    "carilla": "Porcelain veneer",
+    "carillaD": "Per tooth, with a wax trial.",
+    "foot": "2026 prices in Colombian pesos (COP). You pay per appointment, not upfront, and longer treatments can be split into up to 12 interest-free installments on a credit card."
+  },
+  "intl": {
+    "title": "Traveling for treatment",
+    "lead": "Guide prices in US dollars, and a clear plan before you book your flight.",
+    "s1t": "Message us",
+    "s1d": "Tell us what you would like to improve and when you plan to travel. If you have recent X-rays or photos, you can share them.",
+    "s2t": "We guide you",
+    "s2d": "We tell you which treatments may apply to your case, how many appointments they usually take, and a price range.",
+    "s3t": "Assessment in Bogotá",
+    "s3d": "At your first appointment we confirm the diagnosis and give you the plan and a fixed price in writing.",
+    "s4t": "Treatment and return",
+    "s4d": "We schedule appointments around your stay. Some treatments, such as implants, need more than one trip.",
+    "priceTitle": "Guide prices in US dollars",
+    "priceLead": "To give you an idea of your budget before you travel. The final price depends on your clinical assessment and your individual plan.",
+    "colTreatment": "Treatment",
+    "colUnit": "Priced",
+    "colPrice": "USD",
+    "priceNote": "Guide prices in US dollars. Travel and accommodation are not included. Your final price is given in writing after your assessment.",
+    "cta": "Get a quote for my case",
+    "pending": "To be confirmed",
+    "planBased": "Based on your plan",
+    "items": {
+      "valoracion": "Initial assessment with X-ray",
+      "limpieza": "Deep cleaning",
+      "blanqueamiento": "In-office whitening",
+      "resina": "Cosmetic bonding",
+      "carilla": "Porcelain veneer",
+      "corona": "Porcelain crown",
+      "implante": "Implant with crown",
+      "injerto": "Bone graft, if needed",
+      "alineadores": "Clear aligners",
+      "disenoSonrisa": "Smile design"
+    },
+    "units": {
+      "assessment": "Assessment",
+      "session": "Per session",
+      "full": "Full treatment",
+      "surface": "Per surface",
+      "tooth": "Per tooth",
+      "implant": "Per implant",
+      "area": "Per area",
+      "plan": "Combined treatments"
+    }
+  },
+  "voices": {
+    "title": "Patients who traveled",
+    "lead": "This is where we will share the experiences of international patients — only with their written permission. We never use made-up reviews or patient photos without consent.",
+    "previewLabel": "Sample layout · Not a real review",
+    "previewQuote": "[A patient who traveled for treatment will describe their experience here, in their own words.]",
+    "previewMeta": "[Name] · [Country] · [Treatment]",
+    "emptyNote": "If you have been treated with us and would like to share your experience, please get in touch."
+  },
+  "faq": {
+    "title": "Questions",
+    "q1": "Does it hurt?",
+    "a1": "Hardly ever. First we apply a gel that numbs the gum, then the anesthetic is delivered drop by drop by a computer-controlled device, which is what avoids the sharp sting.",
+    "q2": "What if I panic in the chair?",
+    "a2": "Raise your hand and we stop, no questions asked. You can bring headphones, ask for breaks and, for longer procedures, choose conscious sedation.",
+    "q3": "Do you work with insurance?",
+    "a3": "We work on a reimbursement basis: we give you the invoice and the documents your insurer asks for. We are not part of the Colombian public health system (EPS).",
+    "q4": "How long is an appointment?",
+    "a4": "One hour. If the treatment needs less, the extra time is for your questions.",
+    "q5": "Do you see children?",
+    "a5": "From age 4. A child's first visit is just to get to know the room and count teeth.",
+    "q6": "Can I pay in installments?",
+    "a6": "Yes. You pay for each appointment when it ends, and longer treatments can be split into up to 12 interest-free installments on a credit card.",
+    "q7": "Do you handle emergencies?",
+    "a7": "Monday to Saturday we keep two slots a day for pain. Message us on WhatsApp before 10 a.m.",
+    "q8": "What if I can't make it?",
+    "a8": "Let us know 24 hours ahead and we'll move your appointment at no cost. We give that slot to an emergency.",
+    "q9": "Do aligners work for every case?",
+    "a9": "For most. At your assessment we show you the simulation, and if your case is better suited to braces, we'll tell you.",
+    "q10": "How often should I come back?",
+    "a10": "Every six months for a cleaning and check-up. We'll message you when it's time.",
+    "q11": "Is there parking?",
+    "a11": "Yes, in the building's basement, with two hours free. You can also walk from the Calle 93 station.",
+    "q12": "I'm coming from abroad — how many days should I stay?",
+    "a12": "It depends on the treatment. Whitening or bonding can be done in a few days; veneers need several appointments; implants usually require two trips a few months apart. We give you an estimate before you travel and confirm it at your assessment.",
+    "q13": "Can I know the cost before I travel?",
+    "a13": "We can give you a guide range based on the information you send us. The fixed price is given in writing after your in-person assessment, because only then can we confirm the diagnosis.",
+    "q14": "What about follow-up once I'm home?",
+    "a14": "We give you your plan, your X-rays and written recommendations so your local dentist can follow up. For any questions, we stay in touch on WhatsApp."
+  },
+  "form": {
+    "title": "Request an assessment",
+    "lead": "Tell us the basics and we'll reply on WhatsApp. You don't need to know which treatment is right for you.",
+    "aside": "We reply Monday to Saturday during opening hours. For an emergency, message us directly on WhatsApp.",
+    "name": "Name",
+    "contact": "WhatsApp or email",
+    "contactHint": "Include your country code if you are outside Colombia, e.g. +1 305 000 0000.",
+    "country": "Country you live in",
+    "interest": "I'm interested in",
+    "iGeneral": "A general assessment",
+    "iSmile": "Smile design",
+    "iImplants": "Implants",
+    "iWhitening": "Whitening",
+    "iAligners": "Aligners or braces",
+    "iIntl": "A quote for traveling to Bogotá",
+    "iUnsure": "I'm not sure",
+    "language": "Please contact me in",
+    "esChecked": "",
+    "enChecked": " checked",
+    "dates": "Approximate travel dates (optional)",
+    "datesHint": "Only if you are coming from another city or country.",
+    "message": "Message (optional)",
+    "messageHint": "Please don't include detailed medical information; we'll go over it with you at your assessment.",
+    "consent": "I agree that Odontología Ejemplo may use these details only to reply to my request, in line with its personal data policy.",
+    "submit": "Send via WhatsApp",
+    "submitHint": "WhatsApp will open with your message ready to send. This website does not store your details.",
+    "doneTitle": "Your message is ready.",
+    "doneBody": "We opened WhatsApp in a new tab with your details — you just need to press send. If it didn't open, use this button.",
+    "doneOpen": "Open WhatsApp",
+    "again": "Edit my details",
+    "noscript": "This form needs JavaScript. You can message us directly on WhatsApp or by email."
+  },
+  "contact": {
+    "label": "Contact",
+    "hours": "Mon–Fri 7–19 · Sat 8–13",
+    "write": "Message us"
+  },
+  "foot": {
+    "legal": "© 2026 Odontología Ejemplo S.A.S. Registered healthcare provider (REPS) with the Bogotá Health Department. Clinical director: Dr. Valentina Ospina.",
+    "photos": "Reference photographs from Unsplash (Unsplash license); they are not photos of patients or of the clinic:"
+  },
+  "wa": {
+    "general": "Hello, I'd like to book an assessment at Odontología Ejemplo."
+  },
+  "js": {
+    "numberLocale": "en-US",
+    "copFormat": "COP {n}",
+    "captions": {
+      "sonrisa": "Monday to Friday 7:00–19:00, Saturday 8:00–13:00.",
+      "ventana": "Three treatment rooms with natural light. None of them smells like a hospital.",
+      "alineadores": "Clear aligners: see your final smile before you start.",
+      "radiografias": "Digital X-ray included in your assessment.",
+      "espejo": "Sterilized instruments, unsealed in front of you at every visit."
+    },
+    "tooth": {
+      "label": "{zone} {name}",
+      "names": {
+        "1": "front tooth",
+        "2": "front tooth",
+        "3": "canine",
+        "4": "premolar",
+        "5": "premolar",
+        "6": "first molar",
+        "7": "second molar",
+        "8": "wisdom tooth"
+      },
+      "zones": {
+        "1": "upper right",
+        "2": "upper left",
+        "3": "lower left",
+        "4": "lower right"
+      }
+    },
+    "symptoms": {
+      "frio": "it hurts with cold or sweets",
+      "morder": "it hurts when I bite, or for no reason",
+      "roto": "it's broken or chipped",
+      "falta": "it's loose or missing",
+      "estetica": "I'd like it to look better",
+      "revision": "I'd like a check-up"
+    },
+    "plans": {
+      "frio": {
+        "what": "Tooth-colored filling",
+        "time": "1 visit, 45 min",
+        "note": "Pain with cold or sweets is often a small cavity or an exposed root surface."
+      },
+      "morderCordal": {
+        "what": "Wisdom tooth removal",
+        "time": "1 visit, 45 min",
+        "note": "A wisdom tooth that hurts when you bite is often inflamed or poorly positioned. The X-ray will show us."
+      },
+      "morder": {
+        "what": "Root canal",
+        "time": "2 visits, 60 min each",
+        "note": "Pain when biting, or pain that appears for no reason, often comes from the nerve. We treat it under a microscope, without rushing."
+      },
+      "rotoFront": {
+        "what": "Cosmetic bonding or a veneer",
+        "time": "1–2 visits",
+        "note": "A small chip can be rebuilt in one visit; for a larger break we may suggest a veneer."
+      },
+      "rotoBack": {
+        "what": "Porcelain inlay or crown",
+        "time": "2 visits, 60 min each",
+        "note": "A cracked molar needs a piece that holds it together. We design it and try it in before bonding."
+      },
+      "faltaCordal": {
+        "what": "Wisdom tooth check",
+        "time": "1 visit, 30 min",
+        "note": "A missing wisdom tooth rarely needs replacing. If it's loose, we check the gum and bone."
+      },
+      "falta": {
+        "what": "Implant with crown",
+        "time": "3–6 months",
+        "note": "If the tooth is loose, we try to save it first. If it's missing, an implant replaces it without touching the teeth beside it."
+      },
+      "esteticaFront": {
+        "what": "Whitening or veneers",
+        "time": "1–2 visits",
+        "note": "Whitening is often enough. Before any veneer, we show you the result in wax."
+      },
+      "esteticaBack": {
+        "what": "Replacing a metal filling with a tooth-colored one",
+        "time": "1 visit, 45 min",
+        "note": "Dark fillings are replaced with tooth-colored material, one surface at a time."
+      },
+      "revision": {
+        "what": "Full assessment and cleaning",
+        "time": "1 visit, 65 min",
+        "note": "We check all your teeth, not just this one, and you leave with a written plan."
+      }
+    },
+    "disclaimer": "This is guidance, not a diagnosis — we confirm it at your assessment.",
+    "waMap": "Hello, I'd like to book a visit at Odontología Ejemplo. Area that bothers me: {zone}. {symptom}.",
+    "form": {
+      "errName": "Please enter your name.",
+      "errContact": "Please enter a WhatsApp number or an email so we can reply.",
+      "errContactFormat": "Please check the number or email — it looks incomplete.",
+      "errCountry": "Please enter the country you live in.",
+      "errConsent": "We need your permission to reply.",
+      "errSummary": "Please check the highlighted fields.",
+      "preparing": "Preparing your message…",
+      "waIntro": "Hello, I'd like to request an assessment at Odontología Ejemplo.",
+      "fName": "Name",
+      "fContact": "Contact",
+      "fCountry": "Country",
+      "fInterest": "Interested in",
+      "fLanguage": "Preferred language",
+      "fDates": "Travel dates",
+      "fMessage": "Message"
+    },
+    "menu": {
+      "open": "Menu",
+      "close": "Close"
+    }
+  }
+}

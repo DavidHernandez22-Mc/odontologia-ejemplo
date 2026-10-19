@@ -1,0 +1,62 @@
+{
+  "_comment": "Datos de la clínica. Todo lo marcado como EJEMPLO debe cambiarse por la información real antes de lanzar la web. Después de editar este archivo, ejecuta: node build.mjs",
+
+  "siteUrl": "https://davidhernandez22-mc.github.io/odontologia-ejemplo",
+  "brand": "Odontología Ejemplo",
+
+  "contact": {
+    "_status": "EJEMPLO: teléfono, WhatsApp, correo y dirección son de muestra",
+    "whatsapp": "573005550193",
+    "phoneDisplay": "+57 300 555 0193",
+    "phoneHref": "+573005550193",
+    "email": "hola@odontologiaejemplo.com",
+    "street": "Carrera 11 # 93-52, piso 4",
+    "area": "Chicó, Bogotá",
+    "mapsUrl": "https://maps.google.com/?q=Carrera%2011%2093-52%20Bogot%C3%A1",
+    "privacyUrl": ""
+  },
+
+  "pricesCop": {
+    "_status": "EJEMPLO: precios de muestra en pesos colombianos. Reemplazar por las tarifas reales.",
+    "valoracion": 120000,
+    "limpieza": 180000,
+    "sellantes": 70000,
+    "resina": 160000,
+    "endoUni": 520000,
+    "endoMolar": 750000,
+    "incrustacion": 1250000,
+    "corona": 1600000,
+    "alineadores": 9500000,
+    "brackets": 4800000,
+    "retenedores": 450000,
+    "implante": 4200000,
+    "injerto": 1100000,
+    "cordal": 450000,
+    "blanqueamiento": 850000,
+    "carilla": 1400000,
+    "resinaEstetica": 380000,
+    "revisionCordal": 120000
+  },
+
+  "pricesUsd": {
+    "_status": "PENDIENTE: la clínica debe definir los precios en dólares. null se muestra como 'Por confirmar'. No usar conversiones automáticas.",
+    "items": [
+      { "id": "valoracion", "unit": "assessment", "usd": null },
+      { "id": "limpieza", "unit": "session", "usd": null },
+      { "id": "blanqueamiento", "unit": "full", "usd": null },
+      { "id": "resina", "unit": "surface", "usd": null },
+      { "id": "carilla", "unit": "tooth", "usd": null },
+      { "id": "corona", "unit": "tooth", "usd": null },
+      { "id": "implante", "unit": "implant", "usd": null },
+      { "id": "injerto", "unit": "area", "usd": null },
+      { "id": "alineadores", "unit": "full", "usd": null },
+      { "id": "disenoSonrisa", "unit": "plan", "usd": null }
+    ]
+  },
+
+  "testimonials": {
+    "_status": "PENDIENTE: agregar solo testimonios reales con autorización escrita del paciente. Mientras la lista esté vacía y showFormatPreview sea true, se muestra una tarjeta marcada como 'formato de ejemplo'.",
+    "showFormatPreview": true,
+    "items": []
+  }
+}
