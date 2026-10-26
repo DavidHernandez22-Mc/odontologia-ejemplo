@@ -4,7 +4,10 @@
   var T = DATA.js;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var money = new Intl.NumberFormat(T.numberLocale);
-  function cop(n) { return T.copFormat.replace('{n}', money.format(n)); }
+  var usdNf = new Intl.NumberFormat('en-US');
+  function usdApprox(n) { var v = n / DATA.usdRate; return v < 100 ? Math.round(v) : Math.round(v / 5) * 5; }
+  /* in English, peso prices carry the approximate dollar amount in brackets */
+  function cop(n) { return T.copFormat.replace('{n}', money.format(n)) + (T.approx ? T.approx.replace('{n}', usdNf.format(usdApprox(n))) : ''); }
   function waUrl(text) { return 'https://wa.me/' + DATA.whatsapp + '?text=' + encodeURIComponent(text); }
   function cap1(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
 
@@ -27,16 +30,24 @@
     }
   })();
 
-  /* Split the wordmarks into letters for the letter-by-letter entrance */
+  /* Split the wordmarks into letters for the letter-by-letter entrance;
+     words stay whole so a long name only wraps between words */
   document.querySelectorAll('.split-letters').forEach(function (el) {
-    var t = el.textContent;
+    var words = el.textContent.trim().split(/\s+/);
+    var i = 0;
     el.textContent = '';
-    t.split('').forEach(function (c, i) {
-      var s = document.createElement('span');
-      s.className = 'ch';
-      s.style.setProperty('--c', i);
-      s.textContent = c;
-      el.appendChild(s);
+    words.forEach(function (word, w) {
+      if (w) el.appendChild(document.createTextNode(' '));
+      var ws = document.createElement('span');
+      ws.className = 'word';
+      word.split('').forEach(function (c) {
+        var s = document.createElement('span');
+        s.className = 'ch';
+        s.style.setProperty('--c', i++);
+        s.textContent = c;
+        ws.appendChild(s);
+      });
+      el.appendChild(ws);
     });
   });
   var footMark = document.querySelector('.foot .wordmark');
@@ -316,7 +327,7 @@
     document.getElementById('r-time').textContent = r.time;
     document.getElementById('r-price').textContent = cop(DATA.cop[keys[1]]);
     document.getElementById('r-note').textContent = r.note + ' ' + T.disclaimer;
-    document.getElementById('r-cta').href = waUrl(T.waMap.replace('{zone}', where).replace('{symptom}', cap1(T.symptoms[state.s])));
+    document.getElementById('r-cta').href = waUrl(T.waDemo);
     if (animate && !reduce) {
       result.classList.remove('is-updating');
       void result.offsetWidth;
@@ -380,19 +391,8 @@
   });
   form.elements.consent.addEventListener('change', function () { if (form.elements.consent.checked) setError('consent', ''); });
 
-  function message() {
-    var f = form.elements;
-    var lines = [T.form.waIntro, ''];
-    var add = function (label, v) { v = (v || '').trim(); if (v) lines.push(label + ': ' + v); };
-    add(T.form.fName, f.name.value);
-    add(T.form.fContact, f.contact.value);
-    add(T.form.fCountry, f.country.value);
-    add(T.form.fInterest, interest.options[interest.selectedIndex].text);
-    add(T.form.fLanguage, f.language.value === 'en' ? 'English' : 'Español');
-    add(T.form.fDates, f.dates.value);
-    add(T.form.fMessage, f.message.value);
-    return lines.join('\n');
-  }
+  /* every WhatsApp button on this demo opens the same message to David */
+  function message() { return T.waDemo; }
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();

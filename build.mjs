@@ -53,7 +53,12 @@ function render(lang) {
     if (typeof n !== 'number') { errors.push(`[${lang}] precio COP inexistente: ${key}`); return ''; }
     return n;
   };
-  const copText = (key) => t.js.copFormat.replace('{n}', nf.format(cop(key)));
+  const rate = cfg.usdRate.copPerUsd;
+  const usdApprox = (n) => { const v = n / rate; return v < 100 ? Math.round(v) : Math.round(v / 5) * 5; };
+  const usdNf = new Intl.NumberFormat('en-US');
+  // In English, peso prices carry the approximate dollar amount in brackets.
+  const approx = (n) => (t.js.approx ? t.js.approx.replace('{n}', usdNf.format(usdApprox(n))) : '');
+  const copText = (key) => t.js.copFormat.replace('{n}', nf.format(cop(key))) + approx(cop(key));
   const wa = (key) => {
     const msg = lookup(t, key);
     if (typeof msg !== 'string') errors.push(`[${lang}] mensaje de WhatsApp inexistente: ${key}`);
@@ -80,7 +85,11 @@ function render(lang) {
         const b = `${special.base}assets/img/${file}`;
         return `<img src="${b}-800.webp" srcset="${b}-800.webp 800w, ${b}-lg.webp ${dim[0]}w" sizes="${sizes}" width="${dim[0]}" height="${dim[1]}" alt="${escAttr(alt || '')}" decoding="async" ${attrs}>`;
       }
-      case 'cop': return `<b data-n="${cop(arg)}">${nf.format(cop(arg))}</b>`;
+      case 'cop': {
+        const b = `<b data-n="${cop(arg)}">${nf.format(cop(arg))}</b>`;
+        return t.js.approx ? `<span class="price-val">${b}<span class="approx">${approx(cop(arg))}</span></span>` : b;
+      }
+      case 'rate': return `${nf.format(rate)} COP (${cfg.usdRate.date[lang]})`;
       case 'copText': return copText(arg);
       case 'wa': return wa(arg);
       case 'usdRows': return cfg.pricesUsd.items.map((it) => {
@@ -88,7 +97,8 @@ function render(lang) {
         const unit = t.intl.units[it.unit];
         if (!label || !unit) errors.push(`[${lang}] precio USD sin texto: ${it.id}/${it.unit}`);
         let value;
-        if (typeof it.usd === 'number') value = `<span class="usd-value">US$ ${new Intl.NumberFormat('en-US').format(it.usd)}</span>`;
+        if (typeof it.usd === 'number') value = `<span class="usd-value">US$ ${usdNf.format(it.usd)}</span>`;
+        else if (it.cop) value = `<span class="usd-value">≈ US$ ${usdNf.format(usdApprox(cop(it.cop)))}</span><span class="usd-approx">${t.intl.approx}</span>`;
         else if (it.unit === 'plan') value = `<span class="usd-plan">${t.intl.planBased}</span>`;
         else value = `<span class="usd-pending" data-pending="usd">${t.intl.pending}</span>`;
         return `<tr><th scope="row">${label}<span class="unit-m">${unit}</span></th><td>${unit}</td><td class="num">${value}</td></tr>`;
@@ -103,7 +113,7 @@ function render(lang) {
         return `<figure class="voice voice--preview rv rv--up" aria-label="${escAttr(t.voices.previewLabel)}"><p class="voice-label">${t.voices.previewLabel}</p><blockquote><p>${t.voices.previewQuote}</p></blockquote><figcaption>${t.voices.previewMeta}</figcaption></figure>\n      ${note}`;
       }
       case 'pageData': return JSON.stringify({
-        lang, whatsapp: cfg.contact.whatsapp, cop: cfg.pricesCop, js: t.js,
+        lang, whatsapp: cfg.contact.whatsapp, cop: cfg.pricesCop, usdRate: rate, js: t.js,
       }).replace(/</g, '\\u003c');
       default: errors.push(`directiva desconocida: ${name}`); return '';
     }
@@ -138,5 +148,5 @@ if (!checkOnly) {
     writeFileSync(join(root, file), content);
   }
 }
-const pending = cfg.pricesUsd.items.filter((i) => i.usd == null && i.unit !== 'plan').length;
+const pending = cfg.pricesUsd.items.filter((i) => i.usd == null && !i.cop && i.unit !== 'plan').length;
 console.log(`${checkOnly ? 'Validación correcta' : 'Generado'}: ${Object.keys(out).join(', ')}. ${esKeys.size} textos por idioma. Precios USD pendientes: ${pending}. Testimonios publicados: ${(cfg.testimonials.items || []).filter((x) => x.authorized === true).length}.`);

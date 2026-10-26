@@ -31,6 +31,10 @@
 </head>
 <body>
 <a class="skip" href="#hero">{{meta.skip}}</a>
+<div class="demo-bar" role="region" aria-label="{{demo.label}}">
+  <p class="demo-text"><span class="demo-a">{{demo.a}}</span><span class="demo-short">{{demo.short}}</span><span class="demo-b"> · {{demo.b}}</span></p>
+  <a class="demo-btn" href="[[wa:wa.general]]" target="_blank" rel="noopener">{{demo.cta}}</a>
+</div>
 
 <main id="contenido">
 <div class="split">
@@ -79,7 +83,7 @@
         </div>
         <p class="hero-intl rv rv--up" style="--i:9"><a class="link" href="#internacional">{{hero.intl}}</a></p>
       </div>
-      <h1 class="wordmark" id="titulo" aria-label="{{hero.h1}}"><span class="wordmark-inner split-letters">ejemplo</span></h1>
+      <h1 class="wordmark" id="titulo" aria-label="{{hero.h1}}"><span class="wordmark-inner split-letters">{{cfg.brand}}</span></h1>
     </section>
 
     <section class="intro" data-photo="ventana" aria-label="{{intro.label}}">
@@ -547,12 +551,11 @@
       <li>{{cfg.contact.street}}</li>
       <li>{{cfg.contact.area}}</li>
       <li><a href="tel:{{cfg.contact.phoneHref}}">{{cfg.contact.phoneDisplay}}</a></li>
-      <li><a href="mailto:{{cfg.contact.email}}">{{cfg.contact.email}}</a></li>
       <li><a href="{{altUrl}}" hreflang="{{altLang}}" lang="{{altLang}}" data-lang="{{altLang}}">{{lang.switchTo}}</a></li>
     </ul>
   </div>
   <div class="foot-bottom">
-    <p class="wordmark split-letters" aria-hidden="true">ejemplo</p>
+    <p class="wordmark split-letters" aria-hidden="true">{{cfg.brand}}</p>
     <p class="legal">{{foot.legal}}</p>
     <p class="legal">{{foot.photos}} <a href="https://unsplash.com/photos/1AhGNGKuhR0">@jblesly</a>, <a href="https://unsplash.com/photos/44jaETSVX2I">@katasha</a>, <a href="https://unsplash.com/photos/v_2FRXEba94">@jonathanborba</a>, <a href="https://unsplash.com/photos/WFsNCIn8OF4">@candid</a>, <a href="https://unsplash.com/photos/Fdku_oMrDvk">@karibjorn</a>, <a href="https://unsplash.com/photos/ux18C551ghI">@carocaro1987</a>, <a href="https://unsplash.com/photos/DDO0Cv4U9Gs">@streetog</a>, <a href="https://unsplash.com/photos/glPVwPr1FKo">@justatony</a>, <a href="https://unsplash.com/photos/eHwRLpfHSKY">@katasha</a>, <a href="https://unsplash.com/photos/IFL9Hj6os0U">@harold_angus</a>.</p>
   </div>

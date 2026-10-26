@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Odontología Ejemplo · Diseño de sonrisa e implantes en Bogotá",
-    "description": "Clínica de odontología estética en el Chicó, Bogotá. Diseño de sonrisa, carillas, implantes dentales y alineadores, con citas de una hora y presupuesto escrito antes de empezar.",
-    "ogTitle": "Odontología Ejemplo · Odontología estética en Bogotá",
+    "title": "Clínica Dental Chicó · Diseño de sonrisa e implantes en Bogotá",
+    "description": "Clínica Dental Chicó, odontología estética en Bogotá. Diseño de sonrisa, carillas, implantes dentales y alineadores, con citas de una hora y presupuesto escrito antes de empezar.",
+    "ogTitle": "Clínica Dental Chicó · Odontología estética en Bogotá",
     "ogDescription": "Diseño de sonrisa e implantes dentales sin prisa ni dolor, en el Chicó, Bogotá. Presupuesto escrito antes de empezar.",
     "ogLocale": "es_CO",
     "ogLocaleAlt": "en_US",
@@ -48,7 +48,7 @@
     "first": "Pedir primera cita"
   },
   "hero": {
-    "h1": "Odontología Ejemplo, odontología estética en Bogotá",
+    "h1": "Clínica Dental Chicó, odontología estética en Bogotá",
     "sentence": "Odontología estética sin prisa ni dolor, en el Chicó, Bogotá.",
     "meta": "Valoración completa: 65 minutos, [[copText:valoracion]].",
     "intl": "¿Vienes de otro país? Así organizamos tu visita"
@@ -156,11 +156,11 @@
   },
   "letter": {
     "label": "Carta de la fundadora y equipo",
-    "p1": "Abrí Odontología Ejemplo en 2019, después de doce años en clínicas donde cada paciente tenía veinte minutos. Veinte minutos no alcanzan para explicar nada, y menos a alguien que llega con miedo.",
+    "p1": "Abrí Clínica Dental Chicó en 2019, después de doce años en clínicas donde cada paciente tenía veinte minutos. Veinte minutos no alcanzan para explicar nada, y menos a alguien que llega con miedo.",
     "p2": "Aquí cada cita dura una hora. Te explico lo que veo antes de hacer cualquier cosa, y lo que hago lo ves en la pantalla. Si algo te incomoda, <mark>levantas la mano y paramos</mark>.",
     "p3": "Somos cuatro. Andrés hace las endodoncias con microscopio, Laura lleva la ortodoncia, Camila es la higienista que te verá dos veces al año y yo me encargo de la rehabilitación y los implantes.",
     "p4": "No tenemos promociones ni paquetes. Tenemos un precio por tratamiento, escrito, y el tiempo que haga falta.",
-    "role": "Odontóloga, rehabilitación oral. Fundadora de Odontología Ejemplo.",
+    "role": "Odontóloga, rehabilitación oral. Fundadora de Clínica Dental Chicó.",
     "team": "Equipo",
     "t1": "Rehabilitación oral e implantes",
     "t2": "Endodoncia con microscopio",
@@ -311,7 +311,7 @@
     "colTreatment": "Tratamiento",
     "colUnit": "Se cobra",
     "colPrice": "USD",
-    "priceNote": "Valores orientativos en dólares estadounidenses. No incluyen viaje ni alojamiento. El precio definitivo se entrega por escrito después de la valoración.",
+    "priceNote": "Aproximados en dólares estadounidenses, calculados desde nuestros precios en pesos con 1 USD ≈ [[rate]]. No incluyen viaje ni alojamiento. El precio definitivo se entrega por escrito después de la valoración.",
     "cta": "Pedir un presupuesto para mi caso",
     "pending": "Por confirmar",
     "planBased": "Según tu plan",
@@ -336,12 +336,13 @@
       "implant": "Por implante",
       "area": "Por zona",
       "plan": "Combinación de tratamientos"
-    }
+    },
+    "approx": "aprox."
   },
   "voices": {
     "title": "Pacientes que viajaron",
     "lead": "Aquí publicaremos experiencias de pacientes internacionales, solo con su autorización por escrito. No usamos reseñas inventadas ni fotos de pacientes sin permiso.",
-    "previewLabel": "Formato de ejemplo · No es una opinión real",
+    "previewLabel": "Formato de muestra · No es una opinión real",
     "previewQuote": "[Aquí irá, con sus propias palabras, la experiencia de un paciente que viajó para su tratamiento.]",
     "previewMeta": "[Nombre] · [País] · [Tratamiento]",
     "emptyNote": "Si ya te atendiste con nosotros y quieres contar tu experiencia, escríbenos."
@@ -383,7 +384,7 @@
     "aside": "Respondemos de lunes a sábado en horario de atención. Si es una urgencia, escríbenos directamente por WhatsApp.",
     "name": "Nombre",
     "contact": "WhatsApp o correo",
-    "contactHint": "Con indicativo de país si estás fuera de Colombia, por ejemplo +1 305 000 0000.",
+    "contactHint": "Con indicativo de país si estás fuera de Colombia, como +1 305 000 0000.",
     "country": "País donde vives",
     "interest": "Me interesa",
     "iGeneral": "Una valoración general",
@@ -400,14 +401,14 @@
     "datesHint": "Solo si vienes de otra ciudad o de otro país.",
     "message": "Mensaje (opcional)",
     "messageHint": "No incluyas información médica detallada; la revisamos contigo en la valoración.",
-    "consent": "Acepto que Odontología Ejemplo use estos datos solo para responder mi solicitud, según su política de tratamiento de datos personales.",
+    "consent": "Acepto que Clínica Dental Chicó use estos datos solo para responder mi solicitud, según su política de tratamiento de datos personales.",
     "submit": "Enviar por WhatsApp",
     "submitHint": "Se abrirá WhatsApp con tu mensaje listo para enviar. No guardamos estos datos en la web.",
     "doneTitle": "Tu mensaje está listo.",
-    "doneBody": "Abrimos WhatsApp en una pestaña nueva con tus datos. Solo falta que lo envíes. Si no se abrió, usa este botón.",
+    "doneBody": "Abrimos WhatsApp en una pestaña nueva con el mensaje listo. Solo falta que lo envíes. Si no se abrió, usa este botón.",
     "doneOpen": "Abrir WhatsApp",
     "again": "Editar mis datos",
-    "noscript": "El formulario necesita JavaScript. Puedes escribirnos directamente por WhatsApp o al correo de contacto."
+    "noscript": "El formulario necesita JavaScript. Puedes escribirnos directamente por WhatsApp."
   },
   "contact": {
     "label": "Contacto",
@@ -415,11 +416,11 @@
     "write": "Escríbenos"
   },
   "foot": {
-    "legal": "© 2026 Odontología Ejemplo S.A.S. Prestador inscrito en el REPS de la Secretaría de Salud de Bogotá. Directora científica: Dra. Valentina Ospina.",
+    "legal": "© 2026 Clínica Dental Chicó S.A.S. Prestador inscrito en el REPS de la Secretaría de Salud de Bogotá. Directora científica: Dra. Valentina Ospina.",
     "photos": "Fotografías de referencia de Unsplash (licencia Unsplash), no son fotos de pacientes ni del consultorio:"
   },
   "wa": {
-    "general": "Hola, quisiera pedir una cita de valoración en Odontología Ejemplo."
+    "general": "Hola David, vi tu demo de la clínica dental y me interesa una web así para mi consultorio."
   },
   "js": {
     "numberLocale": "es-CO",
@@ -449,14 +450,6 @@
         "3": "de abajo, lado izquierdo",
         "4": "de abajo, lado derecho"
       }
-    },
-    "symptoms": {
-      "frio": "me duele con frío o dulce",
-      "morder": "me duele al morder o sin razón",
-      "roto": "está roto o despicado",
-      "falta": "está flojo o me falta",
-      "estetica": "quiero que se vea mejor",
-      "revision": "quiero una revisión"
     },
     "plans": {
       "frio": {
@@ -511,7 +504,6 @@
       }
     },
     "disclaimer": "Es una orientación, no un diagnóstico: lo confirmamos en la valoración.",
-    "waMap": "Hola, quisiera una cita en Odontología Ejemplo. Zona que me molesta: {zone}. {symptom}.",
     "form": {
       "errName": "Escribe tu nombre.",
       "errContact": "Escribe un WhatsApp o un correo para responderte.",
@@ -519,19 +511,20 @@
       "errCountry": "Escribe el país donde vives.",
       "errConsent": "Necesitamos tu autorización para responderte.",
       "errSummary": "Revisa los campos marcados.",
-      "preparing": "Preparando tu mensaje…",
-      "waIntro": "Hola, quisiera solicitar una valoración en Odontología Ejemplo.",
-      "fName": "Nombre",
-      "fContact": "Contacto",
-      "fCountry": "País",
-      "fInterest": "Me interesa",
-      "fLanguage": "Idioma de contacto",
-      "fDates": "Fechas de viaje",
-      "fMessage": "Mensaje"
+      "preparing": "Preparando tu mensaje…"
     },
     "menu": {
       "open": "Menú",
       "close": "Cerrar"
-    }
+    },
+    "waDemo": "Hola David, vi tu demo de la clínica dental y me interesa una web así para mi consultorio.",
+    "approx": ""
+  },
+  "demo": {
+    "label": "Aviso de sitio de demostración",
+    "a": "Sitio de demostración diseñado por David",
+    "b": "¿Quieres uno así para tu clínica?",
+    "cta": "Escríbeme",
+    "short": "Demo diseñada por David"
   }
 }

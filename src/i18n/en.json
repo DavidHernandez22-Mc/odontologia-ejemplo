@@ -1,8 +1,8 @@
 {
   "meta": {
-    "title": "Odontología Ejemplo · Smile design & dental implants in Bogotá, Colombia",
-    "description": "Cosmetic dentistry in Chicó, Bogotá. Smile design, porcelain veneers, dental implants and clear aligners, with one-hour appointments and a written quote before treatment starts.",
-    "ogTitle": "Odontología Ejemplo · Cosmetic dentistry in Bogotá, Colombia",
+    "title": "Clínica Dental Chicó · Smile design & dental implants in Bogotá, Colombia",
+    "description": "Clínica Dental Chicó, cosmetic dentistry in Bogotá, Colombia. Smile design, porcelain veneers, dental implants and clear aligners, with one-hour appointments and a written quote before treatment starts.",
+    "ogTitle": "Clínica Dental Chicó · Cosmetic dentistry in Bogotá, Colombia",
     "ogDescription": "Unhurried smile design and dental implants in Bogotá. A written treatment plan and price before you commit.",
     "ogLocale": "en_US",
     "ogLocaleAlt": "es_CO",
@@ -48,7 +48,7 @@
     "first": "Book your first visit"
   },
   "hero": {
-    "h1": "Odontología Ejemplo, cosmetic dentistry in Bogotá",
+    "h1": "Clínica Dental Chicó, cosmetic dentistry in Bogotá",
     "sentence": "Gentle, unhurried cosmetic dentistry in Chicó, Bogotá.",
     "meta": "Full assessment: 65 minutes, [[copText:valoracion]].",
     "intl": "Traveling from abroad? Here is how we plan your visit"
@@ -156,11 +156,11 @@
   },
   "letter": {
     "label": "A letter from our founder, and the team",
-    "p1": "I opened Odontología Ejemplo in 2019, after twelve years in clinics where every patient got twenty minutes. Twenty minutes is not enough to explain anything — least of all to someone who walks in afraid.",
+    "p1": "I opened Clínica Dental Chicó in 2019, after twelve years in clinics where every patient got twenty minutes. Twenty minutes is not enough to explain anything — least of all to someone who walks in afraid.",
     "p2": "Here, every appointment lasts an hour. I explain what I see before I do anything, and you watch what I do on the screen. If anything feels uncomfortable, <mark>raise your hand and we stop</mark>.",
     "p3": "There are four of us. Andrés does root canals under the microscope, Laura leads orthodontics, Camila is the hygienist you will see twice a year, and I handle restorative work and implants.",
     "p4": "We don't do promotions or package deals. We have one price per treatment, in writing, and all the time it takes.",
-    "role": "Dentist, restorative dentistry. Founder of Odontología Ejemplo.",
+    "role": "Dentist, restorative dentistry. Founder of Clínica Dental Chicó.",
     "team": "Team",
     "t1": "Restorative dentistry and implants",
     "t2": "Microscope-assisted root canals",
@@ -293,7 +293,7 @@
     "blanqueamientoD": "In-office, with trays for touch-ups at home.",
     "carilla": "Porcelain veneer",
     "carillaD": "Per tooth, with a wax trial.",
-    "foot": "2026 prices in Colombian pesos (COP). You pay per appointment, not upfront, and longer treatments can be split into up to 12 interest-free installments on a credit card."
+    "foot": "2026 prices in Colombian pesos (COP); US dollar amounts in brackets are approximate, at 1 USD ≈ [[rate]]. You pay per appointment, not upfront, and longer treatments can be split into up to 12 interest-free installments on a credit card."
   },
   "intl": {
     "title": "Traveling for treatment",
@@ -311,7 +311,7 @@
     "colTreatment": "Treatment",
     "colUnit": "Priced",
     "colPrice": "USD",
-    "priceNote": "Guide prices in US dollars. Travel and accommodation are not included. Your final price is given in writing after your assessment.",
+    "priceNote": "Approximate amounts in US dollars, converted from our peso prices at 1 USD ≈ [[rate]]. Travel and accommodation are not included. Your final price is given in writing after your assessment.",
     "cta": "Get a quote for my case",
     "pending": "To be confirmed",
     "planBased": "Based on your plan",
@@ -336,7 +336,8 @@
       "implant": "Per implant",
       "area": "Per area",
       "plan": "Combined treatments"
-    }
+    },
+    "approx": "approx."
   },
   "voices": {
     "title": "Patients who traveled",
@@ -400,14 +401,14 @@
     "datesHint": "Only if you are coming from another city or country.",
     "message": "Message (optional)",
     "messageHint": "Please don't include detailed medical information; we'll go over it with you at your assessment.",
-    "consent": "I agree that Odontología Ejemplo may use these details only to reply to my request, in line with its personal data policy.",
+    "consent": "I agree that Clínica Dental Chicó may use these details only to reply to my request, in line with its personal data policy.",
     "submit": "Send via WhatsApp",
     "submitHint": "WhatsApp will open with your message ready to send. This website does not store your details.",
     "doneTitle": "Your message is ready.",
-    "doneBody": "We opened WhatsApp in a new tab with your details — you just need to press send. If it didn't open, use this button.",
+    "doneBody": "We opened WhatsApp in a new tab with the message ready — you just need to press send. If it didn't open, use this button.",
     "doneOpen": "Open WhatsApp",
     "again": "Edit my details",
-    "noscript": "This form needs JavaScript. You can message us directly on WhatsApp or by email."
+    "noscript": "This form needs JavaScript. You can message us directly on WhatsApp."
   },
   "contact": {
     "label": "Contact",
@@ -415,11 +416,11 @@
     "write": "Message us"
   },
   "foot": {
-    "legal": "© 2026 Odontología Ejemplo S.A.S. Registered healthcare provider (REPS) with the Bogotá Health Department. Clinical director: Dr. Valentina Ospina.",
+    "legal": "© 2026 Clínica Dental Chicó S.A.S. Registered healthcare provider (REPS) with the Bogotá Health Department. Clinical director: Dr. Valentina Ospina.",
     "photos": "Reference photographs from Unsplash (Unsplash license); they are not photos of patients or of the clinic:"
   },
   "wa": {
-    "general": "Hello, I'd like to book an assessment at Odontología Ejemplo."
+    "general": "Hi David, I saw your dental clinic demo and I'd like a website like this for my practice."
   },
   "js": {
     "numberLocale": "en-US",
@@ -449,14 +450,6 @@
         "3": "lower left",
         "4": "lower right"
       }
-    },
-    "symptoms": {
-      "frio": "it hurts with cold or sweets",
-      "morder": "it hurts when I bite, or for no reason",
-      "roto": "it's broken or chipped",
-      "falta": "it's loose or missing",
-      "estetica": "I'd like it to look better",
-      "revision": "I'd like a check-up"
     },
     "plans": {
       "frio": {
@@ -511,7 +504,6 @@
       }
     },
     "disclaimer": "This is guidance, not a diagnosis — we confirm it at your assessment.",
-    "waMap": "Hello, I'd like to book a visit at Odontología Ejemplo. Area that bothers me: {zone}. {symptom}.",
     "form": {
       "errName": "Please enter your name.",
       "errContact": "Please enter a WhatsApp number or an email so we can reply.",
@@ -519,19 +511,20 @@
       "errCountry": "Please enter the country you live in.",
       "errConsent": "We need your permission to reply.",
       "errSummary": "Please check the highlighted fields.",
-      "preparing": "Preparing your message…",
-      "waIntro": "Hello, I'd like to request an assessment at Odontología Ejemplo.",
-      "fName": "Name",
-      "fContact": "Contact",
-      "fCountry": "Country",
-      "fInterest": "Interested in",
-      "fLanguage": "Preferred language",
-      "fDates": "Travel dates",
-      "fMessage": "Message"
+      "preparing": "Preparing your message…"
     },
     "menu": {
       "open": "Menu",
       "close": "Close"
-    }
+    },
+    "waDemo": "Hi David, I saw your dental clinic demo and I'd like a website like this for my practice.",
+    "approx": " (≈ US${n})"
+  },
+  "demo": {
+    "label": "Demo site notice",
+    "a": "Demo site designed by David",
+    "b": "Want one like this for your clinic?",
+    "cta": "Message me",
+    "short": "Demo designed by David"
   }
 }
