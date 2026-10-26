@@ -1,6 +1,6 @@
 {
   "_comment": "Datos de la clínica. Lo marcado como MUESTRA debe cambiarse por la información real. Después de editar este archivo, ejecuta: node build.mjs",
-  "siteUrl": "https://davidhernandez22-mc.github.io/odontologia-ejemplo",
+  "siteUrl": "https://odontologiademo1.netlify.app",
   "brand": "Clínica Dental Chicó",
   "contact": {
     "_status": "MUESTRA: la dirección es de muestra. El WhatsApp es el de David (sitio de demostración).",
@@ -99,9 +99,42 @@
     ]
   },
   "testimonials": {
-    "_status": "PENDIENTE: agregar solo testimonios reales con autorización escrita del paciente. Mientras la lista esté vacía y showFormatPreview sea true, se muestra una tarjeta marcada como 'formato de muestra'.",
-    "showFormatPreview": true,
-    "items": []
+    "_status": "Ejemplos ilustrativos para la demo (illustrative: true): se muestran con la etiqueta visible 'Ejemplo ilustrativo para la demo'. Para una clínica real, reemplázalos por testimonios auténticos con autorización escrita (authorized: true, sin illustrative).",
+    "showFormatPreview": false,
+    "items": [
+      {
+        "illustrative": true,
+        "name": "Jennifer M.",
+        "country": {
+          "es": "Estados Unidos",
+          "en": "United States"
+        },
+        "treatment": {
+          "es": "Carillas de cerámica",
+          "en": "Porcelain veneers"
+        },
+        "quote": {
+          "es": "Viajé desde Houston sin conocer a nadie en Bogotá y me sentí acompañada desde el primer mensaje. Antes de tocar un diente me mostraron las carillas en cera y pude opinar sobre la forma. Me fui con una sonrisa que se ve natural y con los controles por escrito.",
+          "en": "I flew in from Houston without knowing anyone in Bogotá, and I felt looked after from the very first message. Before they touched a tooth, they showed me the veneers in wax and asked what I thought of the shape. I left with a smile that looks natural and a written follow-up plan."
+        }
+      },
+      {
+        "illustrative": true,
+        "name": "Marc L.",
+        "country": {
+          "es": "Canadá",
+          "en": "Canada"
+        },
+        "treatment": {
+          "es": "Implante dental",
+          "en": "Dental implant"
+        },
+        "quote": {
+          "es": "Me explicaron cada fase del implante con mis propias radiografías y me dieron el precio cerrado desde la primera cita. Hice dos viajes, tal como me dijeron, y en los dos todo salió a tiempo. Hoy mastico sin pensarlo.",
+          "en": "They walked me through every stage of the implant using my own X-rays and gave me a fixed price at the first appointment. I made two trips, exactly as they said, and both went to plan. Now I chew without thinking about it."
+        }
+      }
+    ]
   },
   "usdRate": {
     "_status": "Tasa usada para mostrar el aproximado en dólares (pesos por 1 USD). Actualizarla cuando cambie la TRM.",

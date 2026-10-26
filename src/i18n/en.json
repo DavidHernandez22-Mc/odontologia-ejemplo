@@ -341,11 +341,8 @@
   },
   "voices": {
     "title": "Patients who traveled",
-    "lead": "This is where we will share the experiences of international patients — only with their written permission. We never use made-up reviews or patient photos without consent.",
-    "previewLabel": "Sample layout · Not a real review",
-    "previewQuote": "[A patient who traveled for treatment will describe their experience here, in their own words.]",
-    "previewMeta": "[Name] · [Country] · [Treatment]",
-    "emptyNote": "If you have been treated with us and would like to share your experience, please get in touch."
+    "emptyNote": "If you have been treated with us and would like to share your experience, please get in touch.",
+    "illustrative": "Illustrative example for this demo"
   },
   "faq": {
     "title": "Questions",
@@ -416,7 +413,7 @@
     "write": "Message us"
   },
   "foot": {
-    "legal": "© 2026 Clínica Dental Chicó S.A.S. Registered healthcare provider (REPS) with the Bogotá Health Department. Clinical director: Dr. Valentina Ospina.",
+    "legal": "© 2026 Clínica Dental Chicó S.A.S. Clinical director: Dr. Valentina Ospina.",
     "photos": "Reference photographs from Unsplash (Unsplash license); they are not photos of patients or of the clinic:"
   },
   "wa": {

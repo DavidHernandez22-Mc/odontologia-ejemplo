@@ -3,6 +3,7 @@
 //      node build.mjs --check  (solo valida, no escribe)
 // Sin dependencias. Node 18+.
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -104,14 +105,16 @@ function render(lang) {
         return `<tr><th scope="row">${label}<span class="unit-m">${unit}</span></th><td>${unit}</td><td class="num">${value}</td></tr>`;
       }).join('\n          ');
       case 'testimonials': {
-        const items = (cfg.testimonials.items || []).filter((x) => x.authorized === true);
+        // Real testimonials need authorized: true. Demo ones need illustrative: true and always carry a visible label.
+        const items = (cfg.testimonials.items || []).filter((x) => x.authorized === true || x.illustrative === true);
         if (items.length) {
-          return items.map((x, i) => `<figure class="voice rv rv--up" style="--i:${i}"><blockquote><p>${escText(x.quote[lang])}</p></blockquote><figcaption>${[x.name, x.country?.[lang], x.treatment?.[lang]].filter(Boolean).map(escText).join(' · ')}</figcaption></figure>`).join('\n      ');
+          return items.map((x, i) => `<figure class="voice rv rv--up" style="--i:${i}">${x.illustrative ? `<p class="voice-label">${t.voices.illustrative}</p>` : ''}<blockquote><p>${escText(x.quote[lang])}</p></blockquote><figcaption>${[x.name, x.country?.[lang], x.treatment?.[lang]].filter(Boolean).map(escText).join(' · ')}</figcaption></figure>`).join('\n      ');
         }
         const note = `<p class="voices-empty rv rv--up" style="--i:2">${t.voices.emptyNote} <a class="link" href="#valoracion">${t.nav.contact}</a></p>`;
-        if (!cfg.testimonials.showFormatPreview) return note;
-        return `<figure class="voice voice--preview rv rv--up" aria-label="${escAttr(t.voices.previewLabel)}"><p class="voice-label">${t.voices.previewLabel}</p><blockquote><p>${t.voices.previewQuote}</p></blockquote><figcaption>${t.voices.previewMeta}</figcaption></figure>\n      ${note}`;
+        return note;
       }
+      // Version stamp so browsers fetch new CSS/JS after each change instead of a cached copy.
+      case 'ver': return createHash('sha1').update(read('assets/' + arg)).digest('hex').slice(0, 8);
       case 'pageData': return JSON.stringify({
         lang, whatsapp: cfg.contact.whatsapp, cop: cfg.pricesCop, usdRate: rate, js: t.js,
       }).replace(/</g, '\\u003c');
@@ -149,4 +152,4 @@ if (!checkOnly) {
   }
 }
 const pending = cfg.pricesUsd.items.filter((i) => i.usd == null && !i.cop && i.unit !== 'plan').length;
-console.log(`${checkOnly ? 'Validación correcta' : 'Generado'}: ${Object.keys(out).join(', ')}. ${esKeys.size} textos por idioma. Precios USD pendientes: ${pending}. Testimonios publicados: ${(cfg.testimonials.items || []).filter((x) => x.authorized === true).length}.`);
+console.log(`${checkOnly ? 'Validación correcta' : 'Generado'}: ${Object.keys(out).join(', ')}. ${esKeys.size} textos por idioma. Precios USD pendientes: ${pending}. Testimonios reales: ${(cfg.testimonials.items || []).filter((x) => x.authorized === true).length}, ilustrativos: ${(cfg.testimonials.items || []).filter((x) => x.illustrative === true).length}.`);

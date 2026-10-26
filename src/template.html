@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@400;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="{{base}}assets/img/sonrisa-800.webp" imagesrcset="{{base}}assets/img/sonrisa-800.webp 800w, {{base}}assets/img/sonrisa-lg.webp 1600w" imagesizes="47vw">
-<link rel="stylesheet" href="{{base}}assets/css/site.css">
+<link rel="stylesheet" href="{{base}}assets/css/site.css?v=[[ver:css/site.css]]">
 </head>
 <body>
 <a class="skip" href="#hero">{{meta.skip}}</a>
@@ -426,7 +426,6 @@
   <div class="wrap grid12">
     <div class="voices-head">
       <h2 class="head rv rv--up" id="t-voices">{{voices.title}}</h2>
-      <p class="rv rv--up" style="--i:1">{{voices.lead}}</p>
     </div>
     <div class="voices-list">
       [[testimonials]]
@@ -562,6 +561,6 @@
 </footer>
 
 <script id="page-data" type="application/json">[[pageData]]</script>
-<script src="{{base}}assets/js/site.js" defer></script>
+<script src="{{base}}assets/js/site.js?v=[[ver:js/site.js]]" defer></script>
 </body>
 </html>

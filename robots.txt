@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://davidhernandez22-mc.github.io/odontologia-ejemplo/sitemap.xml
+Sitemap: https://odontologiademo1.netlify.app/sitemap.xml

@@ -1,6 +1,6 @@
 # Clínica Dental Chicó
 
-Sitio de demostración diseñado por David: web bilingüe (español / inglés) de una clínica de odontología estética en Bogotá. HTML, CSS y JavaScript sin dependencias, publicada en GitHub Pages.
+Sitio de demostración diseñado por David: web bilingüe (español / inglés) de una clínica de odontología estética en Bogotá. HTML, CSS y JavaScript sin dependencias. URL oficial: https://odontologiademo1.netlify.app (`siteUrl` en `src/config.json`).
 
 - Español: `/` · Inglés: `/en/`
 - Diseño de sonrisa, implantes, tratamientos, primera visita, mapa interactivo de la boca, precios en COP, precios orientativos en USD para pacientes internacionales, testimonios, preguntas frecuentes y formulario de valoración que se envía por WhatsApp.
@@ -37,7 +37,7 @@ Todo lo que sigue está marcado en `src/config.json`:
 - **Precios en COP (MUESTRA):** cifras de muestra.
 - **Precios en USD:** con `usd: null` se muestra el aproximado calculado desde el precio en pesos con `usdRate.copPerUsd` (hoy 3.160, TRM del 21 de octubre de 2026). Actualiza la tasa cuando cambie, o escribe un precio exacto, como `"usd": 450`.
 - **Franja de demostración:** textos en `demo` de cada idioma.
-- **Testimonios (PENDIENTE):** solo con autorización escrita del paciente. Formato de cada uno:
+- **Testimonios:** hoy hay 2 ejemplos ilustrativos (`"illustrative": true`), que se muestran con la etiqueta "Ejemplo ilustrativo para la demo". Para una clínica real, cámbialos por testimonios auténticos con autorización escrita del paciente. Formato de cada uno:
 
 ```json
 {
@@ -49,10 +49,9 @@ Todo lo que sigue está marcado en `src/config.json`:
 }
 ```
 
-  Cuando haya al menos uno, pon `"showFormatPreview": false`.
 
 - **Política de datos:** el formulario menciona la política de tratamiento de datos personales; falta publicarla y enlazarla.
-- **Equipo, carta, horarios y textos legales (REPS):** son de muestra.
+- **Equipo, carta, horarios y texto legal del pie de página:** son de muestra.
 - **Fotos:** son de referencia (Unsplash), no de pacientes ni del consultorio. Los créditos están en el pie de página.
 
 ## Ver en local

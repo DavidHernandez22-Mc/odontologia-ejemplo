@@ -341,11 +341,8 @@
   },
   "voices": {
     "title": "Pacientes que viajaron",
-    "lead": "Aquí publicaremos experiencias de pacientes internacionales, solo con su autorización por escrito. No usamos reseñas inventadas ni fotos de pacientes sin permiso.",
-    "previewLabel": "Formato de muestra · No es una opinión real",
-    "previewQuote": "[Aquí irá, con sus propias palabras, la experiencia de un paciente que viajó para su tratamiento.]",
-    "previewMeta": "[Nombre] · [País] · [Tratamiento]",
-    "emptyNote": "Si ya te atendiste con nosotros y quieres contar tu experiencia, escríbenos."
+    "emptyNote": "Si ya te atendiste con nosotros y quieres contar tu experiencia, escríbenos.",
+    "illustrative": "Ejemplo ilustrativo para la demo"
   },
   "faq": {
     "title": "Preguntas",
@@ -416,7 +413,7 @@
     "write": "Escríbenos"
   },
   "foot": {
-    "legal": "© 2026 Clínica Dental Chicó S.A.S. Prestador inscrito en el REPS de la Secretaría de Salud de Bogotá. Directora científica: Dra. Valentina Ospina.",
+    "legal": "© 2026 Clínica Dental Chicó S.A.S. Directora científica: Dra. Valentina Ospina.",
     "photos": "Fotografías de referencia de Unsplash (licencia Unsplash), no son fotos de pacientes ni del consultorio:"
   },
   "wa": {
