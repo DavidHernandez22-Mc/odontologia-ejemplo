@@ -18,7 +18,7 @@ const errors = [];
 
 // Ancho real de la variante grande de cada imagen (la pequeña siempre es 800px).
 const IMAGES = {
-  'sonrisa': [1600, 1067], 'consultorio-ventana': [1400, 2100], 'alineadores': [1400, 1000],
+  'sonrisa-vertical': [1600, 2400], 'consultorio-ventana': [1400, 2100], 'alineadores': [1400, 1000],
   'radiografias': [1600, 1067], 'espejo': [1400, 1866], 'consultorio-madera': [1600, 1067],
   'sonrisa-risa': [1600, 2400], 'sonrisa-detalle': [1600, 2400], 'implante-mano': [1400, 2100],
   'implante-modelo': [1600, 1200],
