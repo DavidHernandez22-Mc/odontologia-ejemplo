@@ -398,7 +398,7 @@
     "datesHint": "Only if you are coming from another city or country.",
     "message": "Message (optional)",
     "messageHint": "Please don't include detailed medical information; we'll go over it with you at your assessment.",
-    "consent": "I agree that Clínica Dental Chicó may use these details only to reply to my request, in line with its personal data policy.",
+    "consent": "This is a demo site. If you write to me, your details go to David Hernández so he can reply, in line with his <a class=\"link\" href=\"[[privacyUrl]]\" target=\"_blank\" rel=\"noopener\">privacy policy</a>.",
     "submit": "Send via WhatsApp",
     "submitHint": "WhatsApp will open with your message ready to send. This website does not store your details.",
     "doneTitle": "Your message is ready.",

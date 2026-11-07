@@ -90,6 +90,7 @@ function render(lang) {
         const b = `<b data-n="${cop(arg)}">${nf.format(cop(arg))}</b>`;
         return t.js.approx ? `<span class="price-val">${b}<span class="approx">${approx(cop(arg))}</span></span>` : b;
       }
+      case 'privacyUrl': return escAttr(cfg.contact.privacyUrl);
       case 'rate': return `${nf.format(rate)} COP (${cfg.usdRate.date[lang]})`;
       case 'copText': return copText(arg);
       case 'wa': return wa(arg);

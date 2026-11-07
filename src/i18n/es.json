@@ -398,7 +398,7 @@
     "datesHint": "Solo si vienes de otra ciudad o de otro país.",
     "message": "Mensaje (opcional)",
     "messageHint": "No incluyas información médica detallada; la revisamos contigo en la valoración.",
-    "consent": "Acepto que Clínica Dental Chicó use estos datos solo para responder mi solicitud, según su política de tratamiento de datos personales.",
+    "consent": "Este sitio es una demostración. Si me escribes, tus datos los recibe David Hernández para responderte, según su <a class=\"link\" href=\"[[privacyUrl]]\" target=\"_blank\" rel=\"noopener\">política de privacidad</a>.",
     "submit": "Enviar por WhatsApp",
     "submitHint": "Se abrirá WhatsApp con tu mensaje listo para enviar. No guardamos estos datos en la web.",
     "doneTitle": "Tu mensaje está listo.",

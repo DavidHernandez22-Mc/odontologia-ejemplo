@@ -50,7 +50,7 @@ Todo lo que sigue está marcado en `src/config.json`:
 ```
 
 
-- **Política de datos:** el formulario menciona la política de tratamiento de datos personales; falta publicarla y enlazarla.
+- **Política de datos:** el texto de autorización del formulario explica que es una demostración y enlaza la política de privacidad de David (`contact.privacyUrl`).
 - **Equipo, carta, horarios y texto legal del pie de página:** son de muestra.
 - **Fotos:** son de referencia (Unsplash), no de pacientes ni del consultorio. Los créditos están en el pie de página.
 
