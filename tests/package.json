@@ -1,0 +1,14 @@
+{
+  "name": "clinica-dental-chico-tests",
+  "private": true,
+  "description": "Pruebas de funciones (Playwright) y medición (Lighthouse). No forman parte del sitio publicado.",
+  "scripts": {
+    "serve": "node serve.mjs",
+    "test": "playwright test",
+    "lighthouse": "node lighthouse.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "lighthouse": "^13.6.0"
+  }
+}
