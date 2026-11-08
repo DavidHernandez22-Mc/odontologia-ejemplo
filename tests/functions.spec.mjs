@@ -175,7 +175,7 @@ for (const lang of ['es', 'en']) {
     test('todas las imágenes cargan y los enlaces internos existen', async ({ page }) => {
       await page.goto(t.path);
       await page.evaluate(() => document.querySelectorAll('img[loading="lazy"]').forEach((i) => { i.loading = 'eager'; }));
-      await page.waitForFunction(() => [...document.images].every((i) => i.complete));
+      await page.waitForFunction(() => !document.querySelector('img[data-src]') && [...document.images].every((i) => i.complete));
       const broken = await page.evaluate(() => [...document.images].filter((i) => !i.naturalWidth).map((i) => i.currentSrc || i.src));
       expect(broken).toEqual([]);
       const missing = await page.evaluate(() => [...document.querySelectorAll('a[href^="#"]')].map((a) => a.getAttribute('href')).filter((h) => h.length > 1 && !document.querySelector(h)));
@@ -210,6 +210,7 @@ test('la foto fija cambia con la sección (escritorio)', async ({ page }, info) 
   await page.locator('#tratamientos').scrollIntoViewIfNeeded();
   await page.mouse.wheel(0, 300);
   await expect(page.locator('.stage-frame img.is-on')).not.toHaveAttribute('data-photo', 'sonrisa');
+  await expect.poll(() => page.locator('.stage-frame img.is-on').evaluate((i) => i.complete && i.naturalWidth)).toBeGreaterThan(0);
 });
 
 test('ruta inexistente: página 404 propia con enlaces al sitio', async ({ page }) => {

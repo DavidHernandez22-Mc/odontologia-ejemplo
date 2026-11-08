@@ -23,10 +23,15 @@ for (const [sizeName, viewport, mobile] of sizes) {
       await page.evaluate((v) => window.scrollTo(0, v), y);
       await page.waitForTimeout(140);
     }
-    await page.evaluate(() => window.scrollTo(0, 0));
-    await page.waitForTimeout(1500);
-    await page.screenshot({ path: `${out}/${name}-${sizeName}.png`, fullPage: true });
-    console.log(`${name}-${sizeName}.png  status ${res.status()}`);
+    // Chrome cannot capture more than 16384px at once, so the page is saved screen by screen
+    const total = await page.evaluate(() => document.documentElement.scrollHeight);
+    let n = 0;
+    for (let y = 0; y < total; y += viewport.height) {
+      await page.evaluate((v) => window.scrollTo(0, v), y);
+      await page.waitForTimeout(450);
+      await page.screenshot({ path: `${out}/${name}-${sizeName}-${String(++n).padStart(2, '0')}.png` });
+    }
+    console.log(`${name}-${sizeName}: ${n} pantallas  status ${res.status()}`);
     await page.close();
   }
   await context.close();

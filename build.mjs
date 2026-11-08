@@ -18,8 +18,8 @@ const errors = [];
 
 // Ancho real de la variante grande de cada imagen (la pequeña siempre es 800px).
 const IMAGES = {
-  'sonrisa-vertical': [1600, 2400], 'consultorio-ventana': [1400, 2100], 'alineadores': [1400, 1000],
-  'radiografias': [1600, 1067], 'espejo': [1400, 1866], 'consultorio-madera': [1600, 1067],
+  'sonrisa-vertical': [1600, 2400], 'consultorio-ventana': [1400, 2100], 'alineadores': [1600, 2000],
+  'radiografias': [1600, 2000], 'espejo': [1400, 1866], 'consultorio-madera': [1600, 1067],
   'sonrisa-risa': [1600, 2400], 'sonrisa-detalle': [1600, 2400], 'implante-mano': [1400, 2100],
   'implante-modelo': [1600, 1200],
 };
@@ -84,7 +84,10 @@ function render(lang) {
         const alt = lookup(t, 'alt.' + altKey);
         if (alt === undefined) errors.push(`[${lang}] texto alternativo inexistente: alt.${altKey}`);
         const b = `${special.base}assets/img/${file}`;
-        return `<img src="${b}-800.webp" srcset="${b}-800.webp 800w, ${b}-lg.webp ${dim[0]}w" sizes="${sizes}" width="${dim[0]}" height="${dim[1]}" alt="${escAttr(alt || '')}" decoding="async" ${attrs}>`;
+        // data-defer: hidden stage photos; site.js fills in the address once the page has loaded
+        const defer = /\bdata-defer\b/.test(attrs);
+        const src = defer ? 'data-src' : 'src', srcset = defer ? 'data-srcset' : 'srcset';
+        return `<img ${src}="${b}-800.webp" ${srcset}="${b}-800.webp 800w, ${b}-lg.webp ${dim[0]}w" sizes="${sizes}" width="${dim[0]}" height="${dim[1]}" alt="${escAttr(alt || '')}" decoding="async" ${attrs}>`;
       }
       case 'cop': {
         const b = `<b data-n="${cop(arg)}">${nf.format(cop(arg))}</b>`;

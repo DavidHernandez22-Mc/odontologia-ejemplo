@@ -109,8 +109,20 @@
   var cap = document.querySelector('.stage-caption');
   var current = 'sonrisa';
   var leaveTimer;
+  /* the hidden stage photos start without an address so they do not compete with the first one */
+  function loadDeferred(im) {
+    if (!im.hasAttribute('data-src')) return;
+    im.srcset = im.getAttribute('data-srcset');
+    im.src = im.getAttribute('data-src');
+    im.removeAttribute('data-srcset');
+    im.removeAttribute('data-src');
+  }
+  function loadAllDeferred() { document.querySelectorAll('img[data-src]').forEach(loadDeferred); }
+  if (document.readyState === 'complete') setTimeout(loadAllDeferred, 300);
+  else window.addEventListener('load', function () { setTimeout(loadAllDeferred, 300); });
   function show(name) {
     if (name === current) return;
+    imgs.forEach(function (im) { if (im.getAttribute('data-photo') === name) loadDeferred(im); });
     var prev = current;
     current = name;
     clearTimeout(leaveTimer);
