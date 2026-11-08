@@ -137,6 +137,7 @@ out['sitemap.xml'] = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${['/', '/en/'].map((p) => `  <url>
     <loc>${cfg.siteUrl}${p}</loc>
+    <lastmod>${new Date().toISOString().slice(0, 10)}</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="${cfg.siteUrl}/"/>
     <xhtml:link rel="alternate" hreflang="en" href="${cfg.siteUrl}/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="${cfg.siteUrl}/"/>
