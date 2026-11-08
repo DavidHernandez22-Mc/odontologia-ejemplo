@@ -61,3 +61,13 @@ python3 -m http.server 4321
 ```
 
 Y abre `http://localhost:4321` (español) o `http://localhost:4321/en/` (inglés).
+
+## Pruebas
+
+En `tests/` (no forman parte del sitio): pruebas de cada función con Playwright, accesibilidad (axe-core), SEO, encabezados de seguridad, capturas y Lighthouse.
+
+```bash
+cd tests && npm install && npx playwright test
+```
+
+Usan el Google Chrome instalado. `node serve.mjs` sirve el sitio como en Netlify (404 propio y encabezados de `_headers`); `node shots.mjs <carpeta>` toma capturas en 390 y 1440 px; `node lighthouse.mjs <archivo.json>` mide en modo móvil.
