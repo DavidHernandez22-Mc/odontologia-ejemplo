@@ -380,7 +380,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 }
 .tooth:hover rect { fill-opacity: 0.75; }
 .tooth:active rect { transform: scale(0.9); }
-.tooth:focus-visible rect { fill-opacity: 0.9; outline: none; }
+.tooth:focus-visible rect { fill-opacity: 0.9; outline: none; stroke: #ffffff; stroke-width: 3; paint-order: normal; }
 .tooth[aria-pressed="true"] rect { fill: #ffffff; fill-opacity: 1; animation: pick 520ms var(--ease-out); }
 @keyframes pick { 0% { transform: scale(1); } 40% { transform: scale(1.28); } 100% { transform: scale(1); } }
 .chart-note { margin-top: 18px; text-align: center; font-size: var(--step-small); color: var(--field-muted); }
@@ -670,7 +670,7 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .voice { margin: 0; background: var(--surface); padding: 36px 36px 32px; border-radius: var(--r); }
 .voice blockquote { margin: 0; font-family: var(--display); font-size: var(--step-lead); line-height: 1.3; letter-spacing: -0.01em; }
 .voice figcaption { margin-top: 20px; font-size: var(--step-small); color: var(--muted); }
-.voice-label { font-size: var(--step-small); font-weight: 600; color: #8a5a00; margin-bottom: 16px; }
+.voice-label { font-size: var(--step-small); font-weight: 600; color: #6e4700; margin-bottom: 16px; }
 
 /* ---------- Assessment request form ---------- */
 .book { background: var(--paper); padding: 170px 0 170px; }
