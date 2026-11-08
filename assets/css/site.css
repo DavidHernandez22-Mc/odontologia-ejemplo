@@ -685,6 +685,8 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
 .form-actions .field-hint { max-width: 40ch; }
 .btn[disabled], .btn.is-busy { opacity: 0.72; cursor: progress; }
 .book-form.is-done > .field, .book-form.is-done > .form-actions { opacity: 0.38; pointer-events: none; transition: opacity var(--t-ui) ease; }
+/* the hidden attribute must win over the panel's display: grid */
+.form-done[hidden] { display: none; }
 .form-done {
   background: var(--accent); color: var(--accent-ink);
   padding: 28px 28px 30px; border-radius: var(--r);
@@ -929,3 +931,12 @@ h1, h2, h3 { margin: 0; font-weight: 400; }
   .demo-short { display: inline; }
 }
 
+
+/* ---------- Page not found ---------- */
+.page-404 { min-height: 100svh; display: flex; flex-direction: column; }
+.nf { flex: 1; display: grid; align-content: center; gap: 22px; padding: 80px var(--margin); max-width: 760px; }
+.nf-brand { font-weight: 600; font-size: var(--step-small); }
+.nf-lead { max-width: 52ch; color: var(--muted); }
+.nf-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; }
+.btn--ghost { background: transparent; color: var(--accent); box-shadow: inset 0 0 0 2px var(--accent); }
+.btn--ghost:hover { background: var(--accent); color: var(--accent-ink); }

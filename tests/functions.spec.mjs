@@ -33,7 +33,9 @@ test.beforeEach(async ({ page, context }) => {
   await context.route(/https:\/\/(wa\.me|api\.whatsapp\.com)\/.*/, (r) => r.fulfill({ status: 200, contentType: 'text/html', body: 'whatsapp stub' }));
 });
 test.afterEach(async ({ page }) => {
-  expect(page.__errors, 'errores de consola').toEqual([]);
+  // the 404 page itself is reported by the browser as a failed load; that one is expected
+  const errors = page.__allow404 ? page.__errors.filter((e) => !/status of 404/.test(e)) : page.__errors;
+  expect(errors, 'errores de consola').toEqual([]);
 });
 
 const isPhone = (testInfo) => testInfo.project.name === 'celular';
@@ -208,4 +210,17 @@ test('la foto fija cambia con la sección (escritorio)', async ({ page }, info) 
   await page.locator('#tratamientos').scrollIntoViewIfNeeded();
   await page.mouse.wheel(0, 300);
   await expect(page.locator('.stage-frame img.is-on')).not.toHaveAttribute('data-photo', 'sonrisa');
+});
+
+test('ruta inexistente: página 404 propia con enlaces al sitio', async ({ page }) => {
+  page.__allow404 = true;
+  const res = await page.goto('/esta-pagina-no-existe');
+  expect(res.status()).toBe(404);
+  await expect(page.locator('h1')).toHaveCount(1);
+  await page.getByRole('link', { name: 'Ir al inicio' }).click();
+  await expect(page).toHaveURL(/127\.0\.0\.1:\d+\/$/);
+});
+
+test('favicon disponible', async ({ request }) => {
+  for (const f of ['/favicon.svg', '/apple-touch-icon.png']) expect((await request.get(f)).status()).toBe(200);
 });

@@ -140,6 +140,36 @@ ${['/', '/en/'].map((p) => `  <url>
   </url>`).join('\n')}
 </urlset>
 `;
+// Page for any address that does not exist (Netlify serves /404.html automatically).
+const t404 = dicts.es;
+out['404.html'] = `<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada · ${cfg.brand}</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1f4a40">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400&family=Geist:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body class="page-404">
+<div class="demo-bar" role="region" aria-label="${t404.demo.label}">
+  <p class="demo-text"><span class="demo-a">${t404.demo.a}</span><span class="demo-short">${t404.demo.short}</span></p>
+</div>
+<main class="nf">
+  <p class="nf-brand">${cfg.brand}</p>
+  <h1 class="head">Esta página no existe</h1>
+  <p class="nf-lead">Puede que el enlace esté mal escrito o que la página se haya movido.</p>
+  <p class="nf-lead" lang="en">This page doesn't exist. The link may be mistyped, or the page may have moved.</p>
+  <p class="nf-actions"><a class="btn" href="/">Ir al inicio <span class="arrow" aria-hidden="true">→</span></a> <a class="btn btn--ghost" href="/en/" lang="en">Go to the English site</a></p>
+</main>
+</body>
+</html>
+`;
 out['robots.txt'] = `User-agent: *\nAllow: /\n\nSitemap: ${cfg.siteUrl}/sitemap.xml\n`;
 
 if (errors.length) {
