@@ -1,0 +1,12 @@
+# Netlify headers. https://docs.netlify.com/routing/headers/
+
+# Fonts never change; CSS and JS are requested with ?v=<hash>, so a new version gets a new address.
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/js/*
+  Cache-Control: public, max-age=31536000, immutable
+# Photos keep their file names, so they are cached for a week.
+/assets/img/*
+  Cache-Control: public, max-age=604800

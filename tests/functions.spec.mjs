@@ -224,3 +224,12 @@ test('ruta inexistente: página 404 propia con enlaces al sitio', async ({ page 
 test('favicon disponible', async ({ request }) => {
   for (const f of ['/favicon.svg', '/apple-touch-icon.png']) expect((await request.get(f)).status()).toBe(200);
 });
+
+test('las fuentes del sitio cargan desde el propio dominio', async ({ page }) => {
+  await page.goto('/');
+  await page.evaluate(() => document.fonts.ready);
+  const loaded = await page.evaluate(() => [...document.fonts].filter((f) => f.status === 'loaded').map((f) => f.family.replace(/"/g, '')));
+  expect(loaded).toEqual(expect.arrayContaining(['Geist', 'Newsreader']));
+  const external = await page.evaluate(() => performance.getEntriesByType('resource').map((r) => r.name).filter((n) => /fonts\.(googleapis|gstatic)/.test(n)));
+  expect(external).toEqual([]);
+});

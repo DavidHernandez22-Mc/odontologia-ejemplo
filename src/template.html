@@ -25,10 +25,7 @@
 <link rel="icon" href="{{base}}favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="{{base}}apple-touch-icon.png">
 <script>document.documentElement.classList.add('js')</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist:wght@400;600&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="{{base}}assets/img/sonrisa-vertical-800.webp" imagesrcset="{{base}}assets/img/sonrisa-vertical-800.webp 800w, {{base}}assets/img/sonrisa-vertical-lg.webp 1600w" imagesizes="(max-width: 860px) 100vw, 47vw">
+<link rel="preload" as="image" fetchpriority="high" href="{{base}}assets/img/sonrisa-vertical-800.webp" imagesrcset="{{base}}assets/img/sonrisa-vertical-800.webp 800w, {{base}}assets/img/sonrisa-vertical-lg.webp 1600w" imagesizes="(max-width: 860px) 100vw, 47vw">
 <link rel="stylesheet" href="{{base}}assets/css/site.css?v=[[ver:css/site.css]]">
 </head>
 <body>
@@ -44,10 +41,10 @@
     <div class="stage-frame">
       <div class="stage-drift">
         [[img:sonrisa-vertical|sonrisa|(max-width: 860px) 100vw, 47vw|class="is-on" data-photo="sonrisa" style="object-position:50% 25%" fetchpriority="high"]]
-        [[img:consultorio-ventana|ventana|(max-width: 860px) 100vw, 47vw|data-photo="ventana"]]
-        [[img:alineadores|alineadores|(max-width: 860px) 100vw, 47vw|data-photo="alineadores" style="object-position:45% 50%"]]
-        [[img:radiografias|radiografias|(max-width: 860px) 100vw, 47vw|data-photo="radiografias" style="object-position:62% 50%"]]
-        [[img:espejo|espejo|(max-width: 860px) 100vw, 47vw|data-photo="espejo"]]
+        [[img:consultorio-ventana|ventana|(max-width: 860px) 100vw, 47vw|data-photo="ventana" fetchpriority="low"]]
+        [[img:alineadores|alineadores|(max-width: 860px) 100vw, 47vw|data-photo="alineadores" fetchpriority="low" style="object-position:45% 50%"]]
+        [[img:radiografias|radiografias|(max-width: 860px) 100vw, 47vw|data-photo="radiografias" fetchpriority="low" style="object-position:62% 50%"]]
+        [[img:espejo|espejo|(max-width: 860px) 100vw, 47vw|data-photo="espejo" fetchpriority="low"]]
       </div>
     </div>
     <p class="stage-caption" aria-live="polite">{{js.captions.sonrisa}}</p>
