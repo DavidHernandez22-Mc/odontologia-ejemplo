@@ -98,7 +98,7 @@
         if (e.target.classList.contains('pgroup')) countUp(e.target);
         io.unobserve(e.target);
       });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    }, { rootMargin: '0px 0px 12% 0px', threshold: 0 }); // start just before the element scrolls into view
     rvs.forEach(function (el) { io.observe(el); });
   } else {
     rvs.forEach(function (el) { el.classList.add('in'); });
